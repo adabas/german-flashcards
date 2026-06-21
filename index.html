@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇩🇪 German Flashcards</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f5f5f3;
+    --bg-tertiary: #efefed;
+    --text: #1a1a1a;
+    --text-secondary: #6b6b6b;
+    --text-tertiary: #9a9a9a;
+    --border: rgba(0,0,0,0.12);
+    --border-strong: rgba(0,0,0,0.25);
+    --blue: #185FA5;
+    --blue-bg: #E6F1FB;
+    --blue-text: #0C447C;
+    --green: #3B6D11;
+    --green-bg: #EAF3DE;
+    --green-text: #27500A;
+    --red: #A32D2D;
+    --red-bg: #FCEBEB;
+    --red-text: #791F1F;
+    --amber-bg: #FAEEDA;
+    --amber-text: #633806;
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a;
+      --bg-secondary: #252523;
+      --bg-tertiary: #2e2e2b;
+      --text: #f0ede8;
+      --text-secondary: #a8a49e;
+      --text-tertiary: #6b6866;
+      --border: rgba(255,255,255,0.1);
+      --border-strong: rgba(255,255,255,0.22);
+      --blue: #85B7EB;
+      --blue-bg: #042C53;
+      --blue-text: #B5D4F4;
+      --green: #97C459;
+      --green-bg: #173404;
+      --green-text: #C0DD97;
+      --red: #F09595;
+      --red-bg: #501313;
+      --red-text: #F7C1C1;
+      --amber-bg: #412402;
+      --amber-text: #FAC775;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-tertiary);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  header p {
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+
+  .app {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 10px 12px;
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .tab.active {
+    background: var(--bg-secondary);
+    color: var(--text);
+    border-color: var(--border-strong);
+    font-weight: 500;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 99px;
+    background: var(--blue-bg);
+    color: var(--blue-text);
+  }
+
+  .card-wrap {
+    perspective: 1000px;
+    height: 230px;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .card-inner.flipped { transform: rotateY(180deg); }
+
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border);
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.75rem;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    background: var(--bg-secondary);
+  }
+
+  .card-label {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .card-word {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .card-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .card-example {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 14px;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .tap-hint {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    text-align: center;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    flex: 1;
+    padding: 11px 12px;
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .btn:hover { background: var(--bg-secondary); }
+  .btn:active { transform: scale(0.98); }
+
+  .btn.danger { color: var(--red); border-color: var(--red); }
+  .btn.success { color: var(--green); border-color: var(--green); }
+  .btn.save { color: var(--blue); border-color: var(--blue); }
+  .btn.primary { background: var(--bg-secondary); font-weight: 500; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .score-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .score-card {
+    flex: 1;
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 10px;
+    text-align: center;
+  }
+
+  .score-num { font-size: 22px; font-weight: 500; color: var(--text); }
+  .score-lbl { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+
+  .progress {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .status {
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .status.loading { color: var(--text-secondary); background: var(--bg-secondary); }
+  .status.error { color: var(--red); background: var(--red-bg); }
+  .status.success { color: var(--green); background: var(--green-bg); }
+
+  .done-panel {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border);
+    margin-bottom: 1rem;
+  }
+
+  .done-panel i { font-size: 36px; color: #BA7517; display: block; margin-bottom: 12px; }
+  .done-panel h2 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+  .done-panel p { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.25rem; }
+
+  .empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+    font-size: 14px;
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border);
+    margin-bottom: 1rem;
+  }
+
+  .empty i { font-size: 32px; color: var(--text-tertiary); display: block; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇩🇪 German Flashcards</h1>
+  <p>B1 level · powered by your Vokabelliste</p>
+</header>
+
+<div class="app">
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('review')" id="tab-review">
+      <i class="ti ti-cards" aria-hidden="true"></i>
+      Review
+      <span class="badge" id="review-count">…</span>
+    </button>
+    <button class="tab" onclick="switchTab('new')" id="tab-new">
+      <i class="ti ti-sparkles" aria-hidden="true"></i>
+      New B1 words
+    </button>
+  </div>
+
+  <div id="global-status"></div>
+
+  <!-- REVIEW PANEL -->
+  <div id="panel-review">
+    <div id="review-empty" class="empty" style="display:none">
+      <i class="ti ti-books" aria-hidden="true"></i>
+      Your Vokabelliste is empty.<br>Add words using the New B1 words tab!
+    </div>
+
+    <div id="review-content" style="display:none">
+      <div class="score-row">
+        <div class="score-card">
+          <div class="score-num" id="sc-known">0</div>
+          <div class="score-lbl">knew it</div>
+        </div>
+        <div class="score-card">
+          <div class="score-num" id="sc-unsure">0</div>
+          <div class="score-lbl">didn't know</div>
+        </div>
+        <div class="score-card">
+          <div class="score-num" id="sc-left">0</div>
+          <div class="score-lbl">remaining</div>
+        </div>
+      </div>
+
+      <p class="progress" id="review-progress"></p>
+
+      <div class="card-wrap" onclick="flipCard('review')">
+        <div class="card-inner" id="review-card">
+          <div class="card-face">
+            <div class="card-label">What is the German word for…</div>
+            <div class="card-word" id="rv-front"></div>
+          </div>
+          <div class="card-face card-back">
+            <div class="card-label">German word</div>
+            <div class="card-word" id="rv-back-word"></div>
+            <div class="card-meta" id="rv-back-meta"></div>
+            <div class="card-example" id="rv-back-ex"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="tap-hint" id="review-hint">
+        <i class="ti ti-hand-click" aria-hidden="true"></i> Tap card to reveal
+      </p>
+
+      <div class="btn-row" id="review-btns" style="display:none">
+        <button class="btn danger" onclick="reviewAnswer(false)">
+          <i class="ti ti-x" aria-hidden="true"></i> Didn't know
+        </button>
+        <button class="btn success" onclick="reviewAnswer(true)">
+          <i class="ti ti-check" aria-hidden="true"></i> Knew it
+        </button>
+      </div>
+    </div>
+
+    <div id="review-done" class="done-panel" style="display:none">
+      <i class="ti ti-trophy" aria-hidden="true"></i>
+      <h2>Session complete!</h2>
+      <p id="done-summary"></p>
+      <button class="btn primary" onclick="startReview()">
+        <i class="ti ti-refresh" aria-hidden="true"></i> Restart
+      </button>
+    </div>
+  </div>
+
+  <!-- NEW WORDS PANEL -->
+  <div id="panel-new" style="display:none">
+    <p class="progress" id="new-progress">Loading first word…</p>
+
+    <div class="card-wrap" onclick="flipCard('new')">
+      <div class="card-inner" id="new-card">
+        <div class="card-face">
+          <div class="card-label">New B1 word</div>
+          <div class="card-word" id="nw-front">…</div>
+          <div class="card-meta" id="nw-front-meta"></div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-label">Meaning</div>
+          <div class="card-word" id="nw-back-meaning"></div>
+          <div class="card-example" id="nw-back-ex"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="tap-hint" id="new-hint">
+      <i class="ti ti-hand-click" aria-hidden="true"></i> Tap card to reveal meaning
+    </p>
+
+    <div class="btn-row" id="new-btns" style="display:none">
+      <button class="btn save" onclick="saveWord()">
+        <i class="ti ti-bookmark" aria-hidden="true"></i> Add to Vokabelliste
+      </button>
+      <button class="btn primary" onclick="nextNewWord()">
+        <i class="ti ti-arrow-right" aria-hidden="true"></i> Next word
+      </button>
+    </div>
+
+    <div id="save-status"></div>
+  </div>
+
+</div>
+
+<script>
+const NOTION_DS = "collection://61fb3364-dc8b-4418-a87c-4a59d9ab7eed";
+const API = "https://api.anthropic.com/v1/messages";
+const MODEL = "claude-sonnet-4-6";
+
+let reviewWords = [], reviewIdx = 0, reviewFlipped = false;
+let knownCount = 0, unsureCount = 0;
+let newFlipped = false, currentNewWord = null;
+let seenNewWords = new Set();
+
+function setGlobalStatus(msg, type) {
+  const el = document.getElementById('global-status');
+  el.innerHTML = msg
+    ? `<div class="status ${type}">${msg}</div>`
+    : '';
+}
+
+async function callClaude(system, user, useMCP) {
+  const body = {
+    model: MODEL,
+    max_tokens: 1000,
+    system,
+    messages: [{ role: "user", content: user }]
+  };
+  if (useMCP) {
+    body.mcp_servers = [{ type: "url", url: "https://mcp.notion.com/mcp", name: "notion" }];
+  }
+  const resp = await fetch(API, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  const data = await resp.json();
+  return data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+}
+
+async function loadVokabelliste() {
+  setGlobalStatus('<i class="ti ti-loader" aria-hidden="true"></i> Loading your Vokabelliste from Notion…', 'loading');
+  try {
+    const text = await callClaude(
+      "You query a Notion database and return ONLY a JSON array, no markdown, no explanation.",
+      `Query the Notion data source ${NOTION_DS} and return all rows as a JSON array. Each object must have: "word" (Wort), "meaning" (Bedeutung), "artikel" (Artikel), "beispiel" (Beispielsatz), "uebersetzung" (Übersetzung). Return ONLY the JSON array.`,
+      true
+    );
+    const clean = text.replace(/```json|```/g, '').trim();
+    const s = clean.indexOf('['), e = clean.lastIndexOf(']');
+    if (s === -1) return [];
+    return JSON.parse(clean.slice(s, e + 1));
+  } catch(err) {
+    setGlobalStatus('<i class="ti ti-alert-circle" aria-hidden="true"></i> Could not load Vokabelliste. Check your connection.', 'error');
+    return [];
+  }
+}
+
+async function init() {
+  reviewWords = await loadVokabelliste();
+  document.getElementById('review-count').textContent = reviewWords.length;
+  setGlobalStatus('', '');
+  startReview();
+  await loadNewWord();
+}
+
+function startReview() {
+  knownCount = 0; unsureCount = 0;
+  reviewWords = [...reviewWords].sort(() => Math.random() - 0.5);
+  reviewIdx = 0;
+  document.getElementById('review-done').style.display = 'none';
+  if (reviewWords.length === 0) {
+    document.getElementById('review-empty').style.display = 'block';
+    document.getElementById('review-content').style.display = 'none';
+  } else {
+    document.getElementById('review-empty').style.display = 'none';
+    document.getElementById('review-content').style.display = 'block';
+    showReviewCard();
+  }
+}
+
+function showReviewCard() {
+  if (reviewIdx >= reviewWords.length) {
+    document.getElementById('review-content').style.display = 'none';
+    document.getElementById('review-done').style.display = 'block';
+    document.getElementById('done-summary').textContent =
+      `Knew it: ${knownCount} · Didn't know: ${unsureCount} out of ${reviewWords.length} words`;
+    return;
+  }
+  const w = reviewWords[reviewIdx];
+  reviewFlipped = false;
+  document.getElementById('review-card').classList.remove('flipped');
+  document.getElementById('rv-front').textContent = w.meaning || '(no meaning saved)';
+  document.getElementById('rv-back-word').textContent = w.word || '';
+  document.getElementById('rv-back-meta').textContent = w.artikel ? `article: ${w.artikel}` : '';
+  document.getElementById('rv-back-ex').textContent = w.beispiel
+    ? `"${w.beispiel}"${w.uebersetzung ? ' — ' + w.uebersetzung : ''}`
+    : '';
+  document.getElementById('review-hint').style.display = 'flex';
+  document.getElementById('review-btns').style.display = 'none';
+  document.getElementById('sc-known').textContent = knownCount;
+  document.getElementById('sc-unsure').textContent = unsureCount;
+  document.getElementById('sc-left').textContent = reviewWords.length - reviewIdx;
+  document.getElementById('review-progress').textContent =
+    `Card ${reviewIdx + 1} of ${reviewWords.length}`;
+}
+
+function flipCard(deck) {
+  if (deck === 'review') {
+    if (!reviewWords.length || reviewIdx >= reviewWords.length) return;
+    reviewFlipped = !reviewFlipped;
+    document.getElementById('review-card').classList.toggle('flipped', reviewFlipped);
+    if (reviewFlipped) {
+      document.getElementById('review-hint').style.display = 'none';
+      document.getElementById('review-btns').style.display = 'flex';
+    }
+  } else {
+    newFlipped = !newFlipped;
+    document.getElementById('new-card').classList.toggle('flipped', newFlipped);
+    if (newFlipped) {
+      document.getElementById('new-hint').style.display = 'none';
+      document.getElementById('new-btns').style.display = 'flex';
+    }
+  }
+}
+
+function reviewAnswer(knew) {
+  if (knew) knownCount++; else unsureCount++;
+  reviewIdx++;
+  showReviewCard();
+}
+
+async function loadNewWord() {
+  document.getElementById('new-hint').style.display = 'flex';
+  document.getElementById('new-btns').style.display = 'none';
+  document.getElementById('new-card').classList.remove('flipped');
+  document.getElementById('save-status').innerHTML = '';
+  document.getElementById('nw-front').textContent = '…';
+  document.getElementById('nw-front-meta').textContent = '';
+  newFlipped = false;
+
+  const knownList = reviewWords.map(w => w.word).join(', ');
+  const seenList = [...seenNewWords].join(', ');
+
+  try {
+    const text = await callClaude(
+      "You are a German language teacher. Return ONLY a JSON object, no markdown, no explanation.",
+      `Give me ONE German word at B1 level that is NOT in this list: [${knownList || 'none'}] and NOT in this seen list: [${seenList || 'none'}].
+Return ONLY this JSON object:
+{"word":"...","artikel":"der/die/das or null","wortart":"Nomen/Verb/Adjektiv/etc","meaning":"English meaning","beispiel":"Example sentence in German","uebersetzung":"English translation of example"}`,
+      false
+    );
+    const clean = text.replace(/```json|```/g, '').trim();
+    const obj = JSON.parse(clean);
+    currentNewWord = obj;
+    seenNewWords.add(obj.word);
+
+    document.getElementById('nw-front').textContent = obj.word;
+    document.getElementById('nw-front-meta').textContent =
+      [obj.artikel, obj.wortart].filter(Boolean).join(' · ');
+    document.getElementById('nw-back-meaning').textContent = obj.meaning;
+    document.getElementById('nw-back-ex').textContent = obj.beispiel
+      ? `"${obj.beispiel}" — ${obj.uebersetzung}`
+      : '';
+    document.getElementById('new-progress').textContent =
+      `${seenNewWords.size} new word${seenNewWords.size !== 1 ? 's' : ''} seen this session`;
+  } catch(e) {
+    document.getElementById('nw-front').textContent = 'Error';
+    document.getElementById('new-progress').textContent = 'Could not load word. Tap Next to try again.';
+    document.getElementById('new-btns').style.display = 'flex';
+  }
+}
+
+async function saveWord() {
+  if (!currentNewWord) return;
+  const btn = document.querySelector('.btn.save');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="ti ti-loader" aria-hidden="true"></i> Saving…';
+
+  try {
+    const text = await callClaude(
+      "You add a page to a Notion database. After saving respond with exactly: SAVED",
+      `Add this word to the Notion data source ${NOTION_DS}:
+- Wort (title): "${currentNewWord.word}"
+- Artikel: "${currentNewWord.artikel || ''}"
+- Wortart: "${currentNewWord.wortart || ''}"
+- Bedeutung: "${currentNewWord.meaning || ''}"
+- Beispielsatz: "${currentNewWord.beispiel || ''}"
+- Übersetzung: "${currentNewWord.uebersetzung || ''}"
+- Niveau: "B1"
+After saving respond with exactly: SAVED`,
+      true
+    );
+
+    if (text.includes('SAVED') || text.toLowerCase().includes('creat') || text.toLowerCase().includes('success')) {
+      reviewWords.push({
+        word: currentNewWord.word,
+        meaning: currentNewWord.meaning,
+        artikel: currentNewWord.artikel,
+        beispiel: currentNewWord.beispiel,
+        uebersetzung: currentNewWord.uebersetzung
+      });
+      document.getElementById('review-count').textContent = reviewWords.length;
+      document.getElementById('save-status').innerHTML =
+        `<div class="status success"><i class="ti ti-check" aria-hidden="true"></i> "${currentNewWord.word}" added to your Vokabelliste!</div>`;
+      btn.innerHTML = '<i class="ti ti-bookmark-filled" aria-hidden="true"></i> Saved!';
+    } else {
+      throw new Error('unexpected');
+    }
+  } catch(e) {
+    document.getElementById('save-status').innerHTML =
+      `<div class="status error"><i class="ti ti-alert-circle" aria-hidden="true"></i> Could not save. Try again.</div>`;
+    btn.disabled = false;
+    btn.innerHTML = '<i class="ti ti-bookmark" aria-hidden="true"></i> Add to Vokabelliste';
+  }
+}
+
+function nextNewWord() { loadNewWord(); }
+
+function switchTab(tab) {
+  document.getElementById('panel-review').style.display = tab === 'review' ? 'block' : 'none';
+  document.getElementById('panel-new').style.display = tab === 'new' ? 'block' : 'none';
+  document.getElementById('tab-review').classList.toggle('active', tab === 'review');
+  document.getElementById('tab-new').classList.toggle('active', tab === 'new');
+}
+
+init();
+</script>
+</body>
+</html>
