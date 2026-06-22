@@ -7,146 +7,56 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #ffffff;
-    --bg-secondary: #f5f5f3;
-    --bg-tertiary: #efefed;
-    --text: #1a1a1a;
-    --text-secondary: #6b6b6b;
-    --text-tertiary: #9a9a9a;
-    --border: rgba(0,0,0,0.12);
-    --border-strong: rgba(0,0,0,0.25);
-    --blue: #185FA5;
-    --blue-bg: #E6F1FB;
-    --blue-text: #0C447C;
-    --green: #3B6D11;
-    --green-bg: #EAF3DE;
-    --green-text: #27500A;
-    --red: #A32D2D;
-    --red-bg: #FCEBEB;
-    --red-text: #791F1F;
-    --amber: #BA7517;
-    --amber-bg: #FAEEDA;
-    --amber-text: #633806;
-    --radius: 10px;
-    --radius-lg: 14px;
+    --bg: #ffffff; --bg-secondary: #f5f5f3; --bg-tertiary: #efefed;
+    --text: #1a1a1a; --text-secondary: #6b6b6b; --text-tertiary: #9a9a9a;
+    --border: rgba(0,0,0,0.12); --border-strong: rgba(0,0,0,0.25);
+    --blue: #185FA5; --blue-bg: #E6F1FB; --blue-text: #0C447C;
+    --green: #3B6D11; --green-bg: #EAF3DE;
+    --red: #A32D2D; --red-bg: #FCEBEB;
+    --amber: #BA7517; --radius: 10px; --radius-lg: 14px;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1c1c1a;
-      --bg-secondary: #252523;
-      --bg-tertiary: #2e2e2b;
-      --text: #f0ede8;
-      --text-secondary: #a8a49e;
-      --text-tertiary: #6b6866;
-      --border: rgba(255,255,255,0.1);
-      --border-strong: rgba(255,255,255,0.22);
-      --blue: #85B7EB;
-      --blue-bg: #042C53;
-      --blue-text: #B5D4F4;
-      --green: #97C459;
-      --green-bg: #173404;
-      --green-text: #C0DD97;
-      --red: #F09595;
-      --red-bg: #501313;
-      --red-text: #F7C1C1;
+      --bg: #1c1c1a; --bg-secondary: #252523; --bg-tertiary: #2e2e2b;
+      --text: #f0ede8; --text-secondary: #a8a49e; --text-tertiary: #6b6866;
+      --border: rgba(255,255,255,0.1); --border-strong: rgba(255,255,255,0.22);
+      --blue: #85B7EB; --blue-bg: #042C53; --blue-text: #B5D4F4;
+      --green: #97C459; --green-bg: #173404;
+      --red: #F09595; --red-bg: #501313;
       --amber: #EF9F27;
-      --amber-bg: #412402;
-      --amber-text: #FAC775;
     }
   }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg-tertiary);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem 1rem 3rem;
-  }
-
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg-tertiary); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 1.5rem 1rem 3rem; }
   header { text-align: center; margin-bottom: 1.5rem; }
-  header h1 { font-size: 22px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  header h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
   header p { font-size: 13px; color: var(--text-tertiary); }
-
   .app { width: 100%; max-width: 520px; }
-
-  /* --- SETUP SCREEN --- */
-  .setup-card {
-    background: var(--bg);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
+  .setup-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1rem; }
   .setup-card h2 { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
   .setup-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5; }
   .setup-card a { color: var(--blue); }
   .field-label { font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px; display: block; }
   .field-row { margin-bottom: 12px; }
-  input[type="text"], input[type="password"] {
-    width: 100%; padding: 9px 12px; border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius); background: var(--bg-secondary); color: var(--text);
-    font-size: 14px; font-family: inherit;
-  }
-  input[type="text"]:focus, input[type="password"]:focus {
-    outline: none; border-color: var(--blue);
-  }
+  input[type="text"], input[type="password"] { width: 100%; padding: 9px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); background: var(--bg-secondary); color: var(--text); font-size: 14px; font-family: inherit; }
+  input:focus { outline: none; border-color: var(--blue); }
   .hint-text { font-size: 11px; color: var(--text-tertiary); margin-top: 4px; line-height: 1.5; }
-
-  /* --- TABS --- */
   .tabs { display: flex; gap: 8px; margin-bottom: 1.25rem; }
-  .tab {
-    flex: 1; padding: 10px 12px; border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius); background: var(--bg); color: var(--text-secondary);
-    font-size: 14px; cursor: pointer; transition: all 0.15s;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-  }
+  .tab { flex: 1; padding: 10px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); background: var(--bg); color: var(--text-secondary); font-size: 14px; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 6px; }
   .tab.active { background: var(--bg-secondary); color: var(--text); font-weight: 500; }
-  .badge {
-    font-size: 11px; padding: 1px 7px; border-radius: 99px;
-    background: var(--blue-bg); color: var(--blue-text);
-  }
-
-  /* --- FLASHCARD --- */
+  .badge { font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--blue-bg); color: var(--blue-text); }
   .card-wrap { perspective: 1000px; height: 230px; margin-bottom: 1.25rem; cursor: pointer; }
-  .card-inner {
-    position: relative; width: 100%; height: 100%;
-    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-    transform-style: preserve-3d;
-  }
+  .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); transform-style: preserve-3d; }
   .card-inner.flipped { transform: rotateY(180deg); }
-  .card-face {
-    position: absolute; width: 100%; height: 100%;
-    backface-visibility: hidden; -webkit-backface-visibility: hidden;
-    border-radius: var(--radius-lg); border: 0.5px solid var(--border);
-    background: var(--bg); display: flex; flex-direction: column;
-    align-items: center; justify-content: center; padding: 1.75rem;
-  }
+  .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--radius-lg); border: 0.5px solid var(--border); background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.75rem; }
   .card-back { transform: rotateY(180deg); background: var(--bg-secondary); }
   .card-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
-  .card-word { font-size: 30px; font-weight: 500; color: var(--text); text-align: center; line-height: 1.2; }
+  .card-word { font-size: 28px; font-weight: 500; color: var(--text); text-align: center; line-height: 1.2; }
   .card-meta { font-size: 13px; color: var(--text-secondary); margin-top: 8px; text-align: center; }
   .card-example { font-size: 13px; color: var(--text-secondary); margin-top: 14px; text-align: center; font-style: italic; line-height: 1.6; }
-
-  .tap-hint {
-    font-size: 13px; color: var(--text-tertiary); text-align: center;
-    margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 5px;
-  }
-
-  /* --- BUTTONS --- */
+  .tap-hint { font-size: 13px; color: var(--text-tertiary); text-align: center; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 5px; }
   .btn-row { display: flex; gap: 8px; margin-bottom: 1rem; }
-  .btn {
-    flex: 1; padding: 11px 12px; border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius); background: var(--bg); color: var(--text);
-    font-size: 14px; cursor: pointer; transition: all 0.15s;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    font-family: inherit;
-  }
+  .btn { flex: 1; padding: 11px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); background: var(--bg); color: var(--text); font-size: 14px; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 6px; font-family: inherit; }
   .btn:hover { background: var(--bg-secondary); }
   .btn:active { transform: scale(0.98); }
   .btn.danger { color: var(--red); border-color: var(--red); }
@@ -155,60 +65,39 @@
   .btn.primary { background: var(--bg-secondary); font-weight: 500; }
   .btn.full { flex: none; width: 100%; }
   .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
-
-  /* --- SCORES --- */
   .score-row { display: flex; gap: 8px; margin-bottom: 1rem; }
   .score-card { flex: 1; background: var(--bg-secondary); border-radius: var(--radius); padding: 10px; text-align: center; }
-  .score-num { font-size: 22px; font-weight: 500; color: var(--text); }
+  .score-num { font-size: 22px; font-weight: 500; }
   .score-lbl { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
-
   .progress { font-size: 13px; color: var(--text-secondary); text-align: center; margin-bottom: 1rem; }
-
-  /* --- STATUS --- */
-  .status {
-    font-size: 13px; text-align: center; padding: 10px 14px;
-    border-radius: var(--radius); margin-bottom: 1rem;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-  }
+  .status { font-size: 13px; text-align: center; padding: 10px 14px; border-radius: var(--radius); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
   .status.loading { color: var(--text-secondary); background: var(--bg-secondary); }
   .status.error { color: var(--red); background: var(--red-bg); }
   .status.success { color: var(--green); background: var(--green-bg); }
-
-  /* --- DONE / EMPTY --- */
-  .done-panel {
-    text-align: center; padding: 2rem 1rem; background: var(--bg);
-    border-radius: var(--radius-lg); border: 0.5px solid var(--border); margin-bottom: 1rem;
-  }
+  .done-panel { text-align: center; padding: 2rem 1rem; background: var(--bg); border-radius: var(--radius-lg); border: 0.5px solid var(--border); margin-bottom: 1rem; }
   .done-panel i { font-size: 36px; color: var(--amber); display: block; margin-bottom: 12px; }
   .done-panel h2 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
   .done-panel p { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.25rem; }
-  .empty {
-    text-align: center; padding: 3rem 1rem; color: var(--text-secondary);
-    font-size: 14px; background: var(--bg); border-radius: var(--radius-lg);
-    border: 0.5px solid var(--border); margin-bottom: 1rem;
-  }
+  .empty { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 14px; background: var(--bg); border-radius: var(--radius-lg); border: 0.5px solid var(--border); margin-bottom: 1rem; }
   .empty i { font-size: 32px; color: var(--text-tertiary); display: block; margin-bottom: 10px; }
-
   .divider { border: none; border-top: 0.5px solid var(--border); margin: 1rem 0; }
   .small-link { font-size: 12px; color: var(--text-tertiary); text-align: center; display: block; cursor: pointer; }
   .small-link:hover { color: var(--text-secondary); }
+  .new-counter { font-size: 12px; color: var(--text-tertiary); text-align: center; margin-bottom: 0.75rem; }
 </style>
 </head>
 <body>
-
 <header>
   <h1>🇩🇪 German Flashcards</h1>
-  <p>B1 level · vocabulary stored in your GitHub repo</p>
+  <p>B1 level · 351 built-in words</p>
 </header>
-
 <div class="app">
 
   <!-- SETUP SCREEN -->
   <div id="screen-setup">
     <div class="setup-card">
-      <h2><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub settings</h2>
-      <p>Your vocabulary is stored as <code>data/vocab.json</code> in your GitHub repo. Enter your details once — they are only saved in your browser memory for this session.</p>
-
+      <h2><i class="ti ti-brand-github"></i> GitHub settings</h2>
+      <p>Your personal vocabulary list is stored as <code>data/vocab.json</code> in your GitHub repo.</p>
       <div class="field-row">
         <label class="field-label" for="gh-user">GitHub username</label>
         <input type="text" id="gh-user" placeholder="e.g. adabas" autocomplete="off">
@@ -219,87 +108,50 @@
       </div>
       <div class="field-row">
         <label class="field-label" for="gh-token">GitHub personal access token</label>
-        <input type="password" id="gh-token" placeholder="ghp_…" autocomplete="off">
-        <p class="hint-text">
-          Create one at GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.<br>
-          Give it <strong>Contents: Read and write</strong> on your flashcard repo only.
-        </p>
+        <input type="password" id="gh-token" placeholder="ghp_… or github_pat_…" autocomplete="off">
+        <p class="hint-text">GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens. Give it <strong>Contents: Read and write</strong> on this repo only.</p>
       </div>
     </div>
-
     <div class="setup-card">
-      <h2><i class="ti ti-robot" aria-hidden="true"></i> Anthropic API key</h2>
-      <p>Used to generate new B1 words. Never stored anywhere — only kept in memory while the app is open.</p>
+      <h2><i class="ti ti-brand-notion"></i> Notion (optional)</h2>
+      <p>When you save a word it will also appear in your Notion Vokabelliste. Leave blank to skip.</p>
       <div class="field-row">
-        <label class="field-label" for="ant-key">Anthropic API key</label>
-        <input type="password" id="ant-key" placeholder="sk-ant-…" autocomplete="off">
-        <p class="hint-text">Find your key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> → API Keys.</p>
-      </div>
-    </div>
-
-    <div class="setup-card">
-      <h2><i class="ti ti-brand-notion" aria-hidden="true"></i> Notion (optional)</h2>
-      <p>When you save a new word, it will also be added to your Notion Vokabelliste automatically. Leave blank to skip.</p>
-      <div class="field-row">
-        <label class="field-label" for="notion-token">Notion integration token</label>
+        <label class="field-label" for="notion-token">Notion personal access token</label>
         <input type="password" id="notion-token" placeholder="ntn_…" autocomplete="off">
-        <p class="hint-text">
-          Go to <a href="https://www.notion.so/profile/integrations" target="_blank">notion.so/profile/integrations</a> → Personal access tokens → New token. Select <strong>Notion API</strong> capability.
-        </p>
+        <p class="hint-text">Go to <a href="https://www.notion.so/profile/integrations" target="_blank">notion.so/profile/integrations</a> → Personal access tokens → New token → select Notion API.</p>
       </div>
     </div>
-
     <div id="setup-error"></div>
-
     <div class="btn-row">
-      <button class="btn primary full" onclick="startApp()">
-        <i class="ti ti-arrow-right" aria-hidden="true"></i> Start flashcards
-      </button>
+      <button class="btn primary full" onclick="startApp()"><i class="ti ti-arrow-right"></i> Start flashcards</button>
     </div>
   </div>
 
   <!-- MAIN APP -->
   <div id="screen-app" style="display:none">
-
     <div class="tabs">
       <button class="tab active" onclick="switchTab('review')" id="tab-review">
-        <i class="ti ti-cards" aria-hidden="true"></i>
-        Review
-        <span class="badge" id="review-count">0</span>
+        <i class="ti ti-cards"></i> Review <span class="badge" id="review-count">0</span>
       </button>
       <button class="tab" onclick="switchTab('new')" id="tab-new">
-        <i class="ti ti-sparkles" aria-hidden="true"></i>
-        New B1 words
+        <i class="ti ti-sparkles"></i> New B1 words
       </button>
     </div>
-
     <div id="global-status"></div>
 
     <!-- REVIEW PANEL -->
     <div id="panel-review">
       <div id="review-empty" class="empty" style="display:none">
-        <i class="ti ti-books" aria-hidden="true"></i>
-        Your vocabulary list is empty.<br>Add words using the New B1 words tab!
+        <i class="ti ti-books"></i>
+        Your saved word list is empty.<br>Add words from the New B1 words tab!
       </div>
-
       <div id="review-content" style="display:none">
         <div class="score-row">
-          <div class="score-card">
-            <div class="score-num" id="sc-known">0</div>
-            <div class="score-lbl">knew it</div>
-          </div>
-          <div class="score-card">
-            <div class="score-num" id="sc-unsure">0</div>
-            <div class="score-lbl">didn't know</div>
-          </div>
-          <div class="score-card">
-            <div class="score-num" id="sc-left">0</div>
-            <div class="score-lbl">remaining</div>
-          </div>
+          <div class="score-card"><div class="score-num" id="sc-known">0</div><div class="score-lbl">knew it</div></div>
+          <div class="score-card"><div class="score-num" id="sc-unsure">0</div><div class="score-lbl">didn't know</div></div>
+          <div class="score-card"><div class="score-num" id="sc-left">0</div><div class="score-lbl">remaining</div></div>
         </div>
-
         <p class="progress" id="review-progress"></p>
-
         <div class="card-wrap" onclick="flipCard('review')">
           <div class="card-inner" id="review-card">
             <div class="card-face">
@@ -314,39 +166,28 @@
             </div>
           </div>
         </div>
-
-        <p class="tap-hint" id="review-hint">
-          <i class="ti ti-hand-click" aria-hidden="true"></i> Tap card to reveal
-        </p>
+        <p class="tap-hint" id="review-hint"><i class="ti ti-hand-click"></i> Tap card to reveal</p>
         <div class="btn-row" id="review-btns" style="display:none">
-          <button class="btn danger" onclick="reviewAnswer(false)">
-            <i class="ti ti-x" aria-hidden="true"></i> Didn't know
-          </button>
-          <button class="btn success" onclick="reviewAnswer(true)">
-            <i class="ti ti-check" aria-hidden="true"></i> Knew it
-          </button>
+          <button class="btn danger" onclick="reviewAnswer(false)"><i class="ti ti-x"></i> Didn't know</button>
+          <button class="btn success" onclick="reviewAnswer(true)"><i class="ti ti-check"></i> Knew it</button>
         </div>
       </div>
-
       <div id="review-done" class="done-panel" style="display:none">
-        <i class="ti ti-trophy" aria-hidden="true"></i>
+        <i class="ti ti-trophy"></i>
         <h2>Session complete!</h2>
         <p id="done-summary"></p>
-        <button class="btn primary" style="margin: 0 auto; max-width: 200px; display:flex" onclick="startReview()">
-          <i class="ti ti-refresh" aria-hidden="true"></i> Restart
-        </button>
+        <button class="btn primary" style="margin:0 auto;max-width:200px;display:flex" onclick="startReview()"><i class="ti ti-refresh"></i> Restart</button>
       </div>
     </div>
 
     <!-- NEW WORDS PANEL -->
     <div id="panel-new" style="display:none">
-      <p class="progress" id="new-progress"></p>
-
+      <p class="new-counter" id="new-counter"></p>
       <div class="card-wrap" onclick="flipCard('new')">
         <div class="card-inner" id="new-card">
           <div class="card-face">
             <div class="card-label">New B1 word</div>
-            <div class="card-word" id="nw-front">…</div>
+            <div class="card-word" id="nw-front"></div>
             <div class="card-meta" id="nw-front-meta"></div>
           </div>
           <div class="card-face card-back">
@@ -356,67 +197,55 @@
           </div>
         </div>
       </div>
-
-      <p class="tap-hint" id="new-hint">
-        <i class="ti ti-hand-click" aria-hidden="true"></i> Tap card to reveal meaning
-      </p>
+      <p class="tap-hint" id="new-hint"><i class="ti ti-hand-click"></i> Tap card to reveal meaning</p>
       <div class="btn-row" id="new-btns" style="display:none">
-        <button class="btn save" id="save-btn" onclick="saveWord()">
-          <i class="ti ti-bookmark" aria-hidden="true"></i> Add to my list
-        </button>
-        <button class="btn primary" onclick="nextNewWord()">
-          <i class="ti ti-arrow-right" aria-hidden="true"></i> Next word
-        </button>
+        <button class="btn save" id="save-btn" onclick="saveWord()"><i class="ti ti-bookmark"></i> Add to my list</button>
+        <button class="btn primary" onclick="nextNewWord()"><i class="ti ti-arrow-right"></i> Next word</button>
       </div>
       <div id="save-status"></div>
     </div>
 
     <hr class="divider">
-    <span class="small-link" onclick="resetApp()">
-      <i class="ti ti-logout" aria-hidden="true"></i> Change settings / sign out
-    </span>
+    <span class="small-link" onclick="resetApp()"><i class="ti ti-logout"></i> Change settings</span>
   </div>
-
 </div>
 
 <script>
+// ── Built-in B1 word list ──────────────────────────────────────────────
+const B1_WORDS = [{"word": "die Absicht", "artikel": "die", "wortart": "Nomen", "meaning": "intention", "beispiel": "Ich hatte keine böse Absicht.", "uebersetzung": "I had no bad intention."}, {"word": "abwesend", "artikel": null, "wortart": "Adjektiv", "meaning": "absent", "beispiel": "Er war heute abwesend.", "uebersetzung": "He was absent today."}, {"word": "die Ahnung", "artikel": "die", "wortart": "Nomen", "meaning": "idea / clue", "beispiel": "Ich habe keine Ahnung.", "uebersetzung": "I have no idea."}, {"word": "ähnlich", "artikel": null, "wortart": "Adjektiv", "meaning": "similar", "beispiel": "Die zwei Schwestern sehen sich ähnlich.", "uebersetzung": "The two sisters look similar."}, {"word": "die Angewohnheit", "artikel": "die", "wortart": "Nomen", "meaning": "habit", "beispiel": "Es ist eine schlechte Angewohnheit.", "uebersetzung": "It is a bad habit."}, {"word": "ankündigen", "artikel": null, "wortart": "Verb", "meaning": "to announce", "beispiel": "Die Firma hat neue Produkte angekündigt.", "uebersetzung": "The company announced new products."}, {"word": "die Anleitung", "artikel": "die", "wortart": "Nomen", "meaning": "instructions / guide", "beispiel": "Lies bitte die Anleitung.", "uebersetzung": "Please read the instructions."}, {"word": "annehmen", "artikel": null, "wortart": "Verb", "meaning": "to accept / to assume", "beispiel": "Ich nehme an, dass er kommt.", "uebersetzung": "I assume that he is coming."}, {"word": "anscheinend", "artikel": null, "wortart": "Adverb", "meaning": "apparently", "beispiel": "Anscheinend hat er vergessen anzurufen.", "uebersetzung": "Apparently he forgot to call."}, {"word": "anstrengend", "artikel": null, "wortart": "Adjektiv", "meaning": "exhausting / tiring", "beispiel": "Die Arbeit war sehr anstrengend.", "uebersetzung": "The work was very exhausting."}, {"word": "der Antrag", "artikel": "der", "wortart": "Nomen", "meaning": "application / form", "beispiel": "Sie hat einen Antrag gestellt.", "uebersetzung": "She submitted an application."}, {"word": "sich ärgern", "artikel": null, "wortart": "Verb", "meaning": "to get annoyed", "beispiel": "Er ärgert sich über den Lärm.", "uebersetzung": "He is annoyed by the noise."}, {"word": "aufmerksam", "artikel": null, "wortart": "Adjektiv", "meaning": "attentive", "beispiel": "Sei bitte aufmerksam im Unterricht.", "uebersetzung": "Please be attentive in class."}, {"word": "aufnehmen", "artikel": null, "wortart": "Verb", "meaning": "to record / to absorb", "beispiel": "Wir nehmen das Gespräch auf.", "uebersetzung": "We are recording the conversation."}, {"word": "der Ausdruck", "artikel": "der", "wortart": "Nomen", "meaning": "expression", "beispiel": "Das ist ein typischer deutscher Ausdruck.", "uebersetzung": "That is a typical German expression."}, {"word": "ausgerechnet", "artikel": null, "wortart": "Adverb", "meaning": "of all things / just", "beispiel": "Ausgerechnet heute regnet es.", "uebersetzung": "Of all days, it rains today."}, {"word": "ausreichend", "artikel": null, "wortart": "Adjektiv", "meaning": "sufficient / enough", "beispiel": "Die Zeit war nicht ausreichend.", "uebersetzung": "The time was not sufficient."}, {"word": "die Aussage", "artikel": "die", "wortart": "Nomen", "meaning": "statement", "beispiel": "Seine Aussage war sehr klar.", "uebersetzung": "His statement was very clear."}, {"word": "außerdem", "artikel": null, "wortart": "Adverb", "meaning": "besides / furthermore", "beispiel": "Außerdem habe ich keine Zeit.", "uebersetzung": "Besides, I have no time."}, {"word": "sich bedanken", "artikel": null, "wortart": "Verb", "meaning": "to say thank you", "beispiel": "Ich möchte mich herzlich bedanken.", "uebersetzung": "I would like to say a heartfelt thank you."}, {"word": "bedeutend", "artikel": null, "wortart": "Adjektiv", "meaning": "significant / important", "beispiel": "Das ist ein bedeutender Unterschied.", "uebersetzung": "That is a significant difference."}, {"word": "die Bedingung", "artikel": "die", "wortart": "Nomen", "meaning": "condition / requirement", "beispiel": "Unter einer Bedingung helfe ich dir.", "uebersetzung": "I will help you under one condition."}, {"word": "sich befinden", "artikel": null, "wortart": "Verb", "meaning": "to be located / to be", "beispiel": "Das Hotel befindet sich im Zentrum.", "uebersetzung": "The hotel is located in the centre."}, {"word": "begeistert", "artikel": null, "wortart": "Adjektiv", "meaning": "enthusiastic / excited", "beispiel": "Sie ist von der Idee begeistert.", "uebersetzung": "She is excited about the idea."}, {"word": "behandeln", "artikel": null, "wortart": "Verb", "meaning": "to treat / to deal with", "beispiel": "Der Arzt hat ihn gut behandelt.", "uebersetzung": "The doctor treated him well."}, {"word": "behaupten", "artikel": null, "wortart": "Verb", "meaning": "to claim / to assert", "beispiel": "Er behauptet, die Wahrheit zu kennen.", "uebersetzung": "He claims to know the truth."}, {"word": "beitragen", "artikel": null, "wortart": "Verb", "meaning": "to contribute", "beispiel": "Jeder kann etwas beitragen.", "uebersetzung": "Everyone can contribute something."}, {"word": "bekannt", "artikel": null, "wortart": "Adjektiv", "meaning": "well-known / familiar", "beispiel": "Er ist ein bekannter Schriftsteller.", "uebersetzung": "He is a well-known writer."}, {"word": "bereit", "artikel": null, "wortart": "Adjektiv", "meaning": "ready / willing", "beispiel": "Ich bin bereit zu helfen.", "uebersetzung": "I am ready to help."}, {"word": "berichten", "artikel": null, "wortart": "Verb", "meaning": "to report", "beispiel": "Die Zeitung berichtet über den Unfall.", "uebersetzung": "The newspaper reports about the accident."}, {"word": "beschreiben", "artikel": null, "wortart": "Verb", "meaning": "to describe", "beispiel": "Kannst du das Problem beschreiben?", "uebersetzung": "Can you describe the problem?"}, {"word": "besitzen", "artikel": null, "wortart": "Verb", "meaning": "to own / to possess", "beispiel": "Er besitzt ein altes Haus.", "uebersetzung": "He owns an old house."}, {"word": "bestehen", "artikel": null, "wortart": "Verb", "meaning": "to pass (exam) / to consist of", "beispiel": "Sie hat die Prüfung bestanden.", "uebersetzung": "She passed the exam."}, {"word": "betragen", "artikel": null, "wortart": "Verb", "meaning": "to amount to", "beispiel": "Die Kosten betragen 200 Euro.", "uebersetzung": "The costs amount to 200 euros."}, {"word": "bewusst", "artikel": null, "wortart": "Adjektiv", "meaning": "conscious / aware", "beispiel": "Mir ist das Problem bewusst.", "uebersetzung": "I am aware of the problem."}, {"word": "beziehungsweise", "artikel": null, "wortart": "Konjunktion", "meaning": "or rather / respectively", "beispiel": "Schreib mir eine E-Mail beziehungsweise ruf mich an.", "uebersetzung": "Write me an email or rather call me."}, {"word": "die Beziehung", "artikel": "die", "wortart": "Nomen", "meaning": "relationship / connection", "beispiel": "Sie haben eine gute Beziehung.", "uebersetzung": "They have a good relationship."}, {"word": "bieten", "artikel": null, "wortart": "Verb", "meaning": "to offer", "beispiel": "Das Hotel bietet viele Leistungen.", "uebersetzung": "The hotel offers many services."}, {"word": "bitter", "artikel": null, "wortart": "Adjektiv", "meaning": "bitter", "beispiel": "Der Kaffee schmeckt bitter.", "uebersetzung": "The coffee tastes bitter."}, {"word": "bleiben", "artikel": null, "wortart": "Verb", "meaning": "to stay / to remain", "beispiel": "Ich bleibe heute zu Hause.", "uebersetzung": "I am staying home today."}, {"word": "der Blick", "artikel": "der", "wortart": "Nomen", "meaning": "look / view / glance", "beispiel": "Der Blick auf die Stadt ist wunderschön.", "uebersetzung": "The view of the city is beautiful."}, {"word": "brauchen", "artikel": null, "wortart": "Verb", "meaning": "to need", "beispiel": "Ich brauche mehr Zeit.", "uebersetzung": "I need more time."}, {"word": "die Chance", "artikel": "die", "wortart": "Nomen", "meaning": "chance / opportunity", "beispiel": "Das ist eine gute Chance.", "uebersetzung": "That is a good chance."}, {"word": "daher", "artikel": null, "wortart": "Adverb", "meaning": "therefore / that is why", "beispiel": "Er war krank, daher kam er nicht.", "uebersetzung": "He was sick, therefore he did not come."}, {"word": "damit", "artikel": null, "wortart": "Konjunktion", "meaning": "so that", "beispiel": "Ich lerne, damit ich die Prüfung bestehe.", "uebersetzung": "I study so that I pass the exam."}, {"word": "daneben", "artikel": null, "wortart": "Adverb", "meaning": "next to it / besides", "beispiel": "Das Buch liegt daneben.", "uebersetzung": "The book is lying next to it."}, {"word": "daran", "artikel": null, "wortart": "Adverb", "meaning": "on it / about it", "beispiel": "Ich denke oft daran.", "uebersetzung": "I often think about it."}, {"word": "darstellen", "artikel": null, "wortart": "Verb", "meaning": "to represent / to show", "beispiel": "Das Bild stellt die Stadt dar.", "uebersetzung": "The picture represents the city."}, {"word": "dauerhaft", "artikel": null, "wortart": "Adjektiv", "meaning": "permanent / lasting", "beispiel": "Sie sucht eine dauerhafte Lösung.", "uebersetzung": "She is looking for a permanent solution."}, {"word": "demnächst", "artikel": null, "wortart": "Adverb", "meaning": "soon / shortly", "beispiel": "Der Film kommt demnächst ins Kino.", "uebersetzung": "The film is coming to the cinema soon."}, {"word": "deshalb", "artikel": null, "wortart": "Adverb", "meaning": "therefore / that is why", "beispiel": "Deshalb bin ich hier.", "uebersetzung": "That is why I am here."}, {"word": "deutlich", "artikel": null, "wortart": "Adjektiv", "meaning": "clear / distinct", "beispiel": "Bitte sprich deutlicher.", "uebersetzung": "Please speak more clearly."}, {"word": "dienen", "artikel": null, "wortart": "Verb", "meaning": "to serve", "beispiel": "Womit kann ich Ihnen dienen?", "uebersetzung": "How can I serve you?"}, {"word": "doch", "artikel": null, "wortart": "Partikel", "meaning": "but / yet / yes (contradiction)", "beispiel": "Ich dachte, du kommst nicht. – Doch!", "uebersetzung": "I thought you were not coming. – Yes I am!"}, {"word": "dringend", "artikel": null, "wortart": "Adjektiv", "meaning": "urgent", "beispiel": "Das ist eine dringende Angelegenheit.", "uebersetzung": "This is an urgent matter."}, {"word": "durchschnittlich", "artikel": null, "wortart": "Adjektiv", "meaning": "average", "beispiel": "Das ist ein durchschnittliches Einkommen.", "uebersetzung": "That is an average income."}, {"word": "eben", "artikel": null, "wortart": "Partikel", "meaning": "just / exactly / simply", "beispiel": "Das ist eben so.", "uebersetzung": "That is just how it is."}, {"word": "die Eigenschaft", "artikel": "die", "wortart": "Nomen", "meaning": "characteristic / quality", "beispiel": "Geduld ist eine wichtige Eigenschaft.", "uebersetzung": "Patience is an important quality."}, {"word": "eigentlich", "artikel": null, "wortart": "Adverb", "meaning": "actually / really", "beispiel": "Was willst du eigentlich?", "uebersetzung": "What do you actually want?"}, {"word": "einige", "artikel": null, "wortart": "Pronomen", "meaning": "some / a few", "beispiel": "Einige Studenten waren abwesend.", "uebersetzung": "Some students were absent."}, {"word": "einschließlich", "artikel": null, "wortart": "Präposition", "meaning": "including", "beispiel": "Einschließlich Steuern kostet es 50 Euro.", "uebersetzung": "Including taxes it costs 50 euros."}, {"word": "der Einwohner", "artikel": "der", "wortart": "Nomen", "meaning": "inhabitant / resident", "beispiel": "Die Stadt hat eine Million Einwohner.", "uebersetzung": "The city has one million inhabitants."}, {"word": "einzeln", "artikel": null, "wortart": "Adjektiv", "meaning": "individual / single / one by one", "beispiel": "Bitte tretet einzeln ein.", "uebersetzung": "Please enter one by one."}, {"word": "empfehlen", "artikel": null, "wortart": "Verb", "meaning": "to recommend", "beispiel": "Kannst du ein Restaurant empfehlen?", "uebersetzung": "Can you recommend a restaurant?"}, {"word": "entscheiden", "artikel": null, "wortart": "Verb", "meaning": "to decide", "beispiel": "Du musst dich entscheiden.", "uebersetzung": "You have to decide."}, {"word": "sich entspannen", "artikel": null, "wortart": "Verb", "meaning": "to relax", "beispiel": "Am Wochenende entspanne ich mich.", "uebersetzung": "I relax at the weekend."}, {"word": "entstehen", "artikel": null, "wortart": "Verb", "meaning": "to arise / to develop", "beispiel": "Wie ist das Problem entstanden?", "uebersetzung": "How did the problem arise?"}, {"word": "die Entwicklung", "artikel": "die", "wortart": "Nomen", "meaning": "development", "beispiel": "Die technische Entwicklung ist schnell.", "uebersetzung": "Technological development is fast."}, {"word": "sich ereignen", "artikel": null, "wortart": "Verb", "meaning": "to occur / to happen", "beispiel": "Der Unfall ereignete sich gestern.", "uebersetzung": "The accident occurred yesterday."}, {"word": "das Ergebnis", "artikel": "das", "wortart": "Nomen", "meaning": "result / outcome", "beispiel": "Das Ergebnis war überraschend.", "uebersetzung": "The result was surprising."}, {"word": "erhalten", "artikel": null, "wortart": "Verb", "meaning": "to receive / to maintain", "beispiel": "Ich habe einen Brief erhalten.", "uebersetzung": "I received a letter."}, {"word": "erkennen", "artikel": null, "wortart": "Verb", "meaning": "to recognise / to realise", "beispiel": "Ich habe ihn sofort erkannt.", "uebersetzung": "I recognised him immediately."}, {"word": "erklären", "artikel": null, "wortart": "Verb", "meaning": "to explain", "beispiel": "Kannst du das erklären?", "uebersetzung": "Can you explain that?"}, {"word": "erlauben", "artikel": null, "wortart": "Verb", "meaning": "to allow / to permit", "beispiel": "Das ist hier nicht erlaubt.", "uebersetzung": "That is not allowed here."}, {"word": "ermöglichen", "artikel": null, "wortart": "Verb", "meaning": "to make possible / to enable", "beispiel": "Das Internet ermöglicht vieles.", "uebersetzung": "The internet makes many things possible."}, {"word": "ernsthaft", "artikel": null, "wortart": "Adjektiv", "meaning": "serious / earnest", "beispiel": "Das ist ein ernsthaftes Problem.", "uebersetzung": "That is a serious problem."}, {"word": "erscheinen", "artikel": null, "wortart": "Verb", "meaning": "to appear / to seem", "beispiel": "Das Buch erscheint nächsten Monat.", "uebersetzung": "The book appears next month."}, {"word": "ersetzen", "artikel": null, "wortart": "Verb", "meaning": "to replace", "beispiel": "Kannst du die Batterie ersetzen?", "uebersetzung": "Can you replace the battery?"}, {"word": "erwähnen", "artikel": null, "wortart": "Verb", "meaning": "to mention", "beispiel": "Er hat das nicht erwähnt.", "uebersetzung": "He did not mention that."}, {"word": "erweisen", "artikel": null, "wortart": "Verb", "meaning": "to prove / to turn out", "beispiel": "Das hat sich als falsch erwiesen.", "uebersetzung": "That turned out to be wrong."}, {"word": "erzählen", "artikel": null, "wortart": "Verb", "meaning": "to tell / to narrate", "beispiel": "Erzähl mir eine Geschichte.", "uebersetzung": "Tell me a story."}, {"word": "etwa", "artikel": null, "wortart": "Adverb", "meaning": "approximately / about", "beispiel": "Es kostet etwa 20 Euro.", "uebersetzung": "It costs approximately 20 euros."}, {"word": "eventuell", "artikel": null, "wortart": "Adverb", "meaning": "possibly / perhaps", "beispiel": "Eventuell komme ich später.", "uebersetzung": "Possibly I will come later."}, {"word": "die Fähigkeit", "artikel": "die", "wortart": "Nomen", "meaning": "ability / skill", "beispiel": "Sie hat die Fähigkeit, gut zu führen.", "uebersetzung": "She has the ability to lead well."}, {"word": "falls", "artikel": null, "wortart": "Konjunktion", "meaning": "in case / if", "beispiel": "Falls es regnet, bleiben wir drinnen.", "uebersetzung": "In case it rains, we will stay inside."}, {"word": "fassen", "artikel": null, "wortart": "Verb", "meaning": "to grasp / to hold / to contain", "beispiel": "Ich kann es kaum fassen.", "uebersetzung": "I can barely grasp it."}, {"word": "fehlen", "artikel": null, "wortart": "Verb", "meaning": "to be missing / to be absent", "beispiel": "Du fehlst mir sehr.", "uebersetzung": "I miss you very much."}, {"word": "das Feld", "artikel": "das", "wortart": "Nomen", "meaning": "field", "beispiel": "Das Feld ist sehr groß.", "uebersetzung": "The field is very large."}, {"word": "fest", "artikel": null, "wortart": "Adjektiv", "meaning": "firm / solid / fixed", "beispiel": "Wir haben einen festen Termin.", "uebersetzung": "We have a fixed appointment."}, {"word": "feststellen", "artikel": null, "wortart": "Verb", "meaning": "to determine / to establish", "beispiel": "Er stellte fest, dass er falsch lag.", "uebersetzung": "He determined that he was wrong."}, {"word": "fördern", "artikel": null, "wortart": "Verb", "meaning": "to support / to promote", "beispiel": "Die Schule fördert kreatives Denken.", "uebersetzung": "The school promotes creative thinking."}, {"word": "der Fortschritt", "artikel": "der", "wortart": "Nomen", "meaning": "progress", "beispiel": "Du machst gute Fortschritte.", "uebersetzung": "You are making good progress."}, {"word": "freilich", "artikel": null, "wortart": "Adverb", "meaning": "of course / certainly", "beispiel": "Das ist freilich richtig.", "uebersetzung": "That is of course correct."}, {"word": "freiwillig", "artikel": null, "wortart": "Adjektiv", "meaning": "voluntary", "beispiel": "Die Teilnahme ist freiwillig.", "uebersetzung": "Participation is voluntary."}, {"word": "die Frist", "artikel": "die", "wortart": "Nomen", "meaning": "deadline / period", "beispiel": "Die Frist endet am Freitag.", "uebersetzung": "The deadline is on Friday."}, {"word": "führen", "artikel": null, "wortart": "Verb", "meaning": "to lead / to guide", "beispiel": "Sie führt das Unternehmen gut.", "uebersetzung": "She leads the company well."}, {"word": "die Gefahr", "artikel": "die", "wortart": "Nomen", "meaning": "danger", "beispiel": "Da ist keine Gefahr.", "uebersetzung": "There is no danger."}, {"word": "gegenüber", "artikel": null, "wortart": "Präposition", "meaning": "opposite / towards", "beispiel": "Er sitzt mir gegenüber.", "uebersetzung": "He is sitting opposite me."}, {"word": "gehören", "artikel": null, "wortart": "Verb", "meaning": "to belong to", "beispiel": "Das Buch gehört mir.", "uebersetzung": "The book belongs to me."}, {"word": "gelegentlich", "artikel": null, "wortart": "Adverb", "meaning": "occasionally", "beispiel": "Ich trinke gelegentlich Kaffee.", "uebersetzung": "I occasionally drink coffee."}, {"word": "gelten", "artikel": null, "wortart": "Verb", "meaning": "to be valid / to apply", "beispiel": "Das Gesetz gilt für alle.", "uebersetzung": "The law applies to everyone."}, {"word": "genießen", "artikel": null, "wortart": "Verb", "meaning": "to enjoy", "beispiel": "Ich genieße die Ruhe.", "uebersetzung": "I enjoy the peace and quiet."}, {"word": "das Gerät", "artikel": "das", "wortart": "Nomen", "meaning": "device / appliance", "beispiel": "Das Gerät funktioniert nicht.", "uebersetzung": "The device is not working."}, {"word": "gering", "artikel": null, "wortart": "Adjektiv", "meaning": "low / small / minor", "beispiel": "Das Risiko ist gering.", "uebersetzung": "The risk is low."}, {"word": "gesamt", "artikel": null, "wortart": "Adjektiv", "meaning": "total / entire / whole", "beispiel": "Die Gesamtkosten sind hoch.", "uebersetzung": "The total costs are high."}, {"word": "das Gespräch", "artikel": "das", "wortart": "Nomen", "meaning": "conversation / talk", "beispiel": "Wir hatten ein langes Gespräch.", "uebersetzung": "We had a long conversation."}, {"word": "gewohnt", "artikel": null, "wortart": "Adjektiv", "meaning": "used to / accustomed to", "beispiel": "Das bin ich nicht gewohnt.", "uebersetzung": "I am not used to that."}, {"word": "gleichzeitig", "artikel": null, "wortart": "Adverb", "meaning": "at the same time / simultaneously", "beispiel": "Ich kann nicht beides gleichzeitig machen.", "uebersetzung": "I cannot do both at the same time."}, {"word": "der Grund", "artikel": "der", "wortart": "Nomen", "meaning": "reason / ground", "beispiel": "Aus welchem Grund bist du hier?", "uebersetzung": "For what reason are you here?"}, {"word": "gültig", "artikel": null, "wortart": "Adjektiv", "meaning": "valid", "beispiel": "Ist Ihr Ausweis noch gültig?", "uebersetzung": "Is your ID still valid?"}, {"word": "handeln", "artikel": null, "wortart": "Verb", "meaning": "to act / to deal / to be about", "beispiel": "Worum handelt das Buch?", "uebersetzung": "What is the book about?"}, {"word": "häufig", "artikel": null, "wortart": "Adjektiv", "meaning": "frequent / often", "beispiel": "Das passiert häufig.", "uebersetzung": "That happens frequently."}, {"word": "hinweisen", "artikel": null, "wortart": "Verb", "meaning": "to point out / to refer to", "beispiel": "Ich möchte auf ein Problem hinweisen.", "uebersetzung": "I would like to point out a problem."}, {"word": "der Hinweis", "artikel": "der", "wortart": "Nomen", "meaning": "hint / note / reference", "beispiel": "Danke für den Hinweis.", "uebersetzung": "Thank you for the hint."}, {"word": "hinsichtlich", "artikel": null, "wortart": "Präposition", "meaning": "regarding / with respect to", "beispiel": "Hinsichtlich der Kosten gibt es Probleme.", "uebersetzung": "Regarding the costs there are problems."}, {"word": "immerhin", "artikel": null, "wortart": "Adverb", "meaning": "at least / after all", "beispiel": "Immerhin hat er es versucht.", "uebersetzung": "At least he tried."}, {"word": "inzwischen", "artikel": null, "wortart": "Adverb", "meaning": "by now / in the meantime", "beispiel": "Inzwischen hat sich viel verändert.", "uebersetzung": "A lot has changed in the meantime."}, {"word": "irgendwo", "artikel": null, "wortart": "Adverb", "meaning": "somewhere", "beispiel": "Ich habe es irgendwo gelassen.", "uebersetzung": "I left it somewhere."}, {"word": "jedenfalls", "artikel": null, "wortart": "Adverb", "meaning": "in any case / at any rate", "beispiel": "Jedenfalls war es eine gute Idee.", "uebersetzung": "In any case it was a good idea."}, {"word": "jeweils", "artikel": null, "wortart": "Adverb", "meaning": "each / at a time / respectively", "beispiel": "Jeder bekommt jeweils zwei Stücke.", "uebersetzung": "Each person gets two pieces each."}, {"word": "kaum", "artikel": null, "wortart": "Adverb", "meaning": "hardly / barely / scarcely", "beispiel": "Ich habe kaum geschlafen.", "uebersetzung": "I have barely slept."}, {"word": "die Kenntnis", "artikel": "die", "wortart": "Nomen", "meaning": "knowledge", "beispiel": "Er hat gute Kenntnisse in Deutsch.", "uebersetzung": "He has good knowledge of German."}, {"word": "die Kommunikation", "artikel": "die", "wortart": "Nomen", "meaning": "communication", "beispiel": "Gute Kommunikation ist wichtig.", "uebersetzung": "Good communication is important."}, {"word": "die Konsequenz", "artikel": "die", "wortart": "Nomen", "meaning": "consequence", "beispiel": "Das hat ernste Konsequenzen.", "uebersetzung": "That has serious consequences."}, {"word": "kontrollieren", "artikel": null, "wortart": "Verb", "meaning": "to control / to check", "beispiel": "Bitte kontrolliere deine Antworten.", "uebersetzung": "Please check your answers."}, {"word": "die Kosten", "artikel": null, "wortart": "Nomen", "meaning": "costs / expenses", "beispiel": "Die Kosten sind zu hoch.", "uebersetzung": "The costs are too high."}, {"word": "kürzlich", "artikel": null, "wortart": "Adverb", "meaning": "recently", "beispiel": "Ich habe ihn kürzlich getroffen.", "uebersetzung": "I met him recently."}, {"word": "die Lage", "artikel": "die", "wortart": "Nomen", "meaning": "situation / location", "beispiel": "Die Lage ist ernst.", "uebersetzung": "The situation is serious."}, {"word": "leisten", "artikel": null, "wortart": "Verb", "meaning": "to achieve / to afford / to provide", "beispiel": "Das kann ich mir nicht leisten.", "uebersetzung": "I cannot afford that."}, {"word": "liefern", "artikel": null, "wortart": "Verb", "meaning": "to deliver / to supply", "beispiel": "Das Paket wird morgen geliefert.", "uebersetzung": "The package will be delivered tomorrow."}, {"word": "lösen", "artikel": null, "wortart": "Verb", "meaning": "to solve / to dissolve", "beispiel": "Wir müssen das Problem lösen.", "uebersetzung": "We need to solve the problem."}, {"word": "mangelhaft", "artikel": null, "wortart": "Adjektiv", "meaning": "deficient / inadequate", "beispiel": "Die Qualität ist mangelhaft.", "uebersetzung": "The quality is inadequate."}, {"word": "die Maßnahme", "artikel": "die", "wortart": "Nomen", "meaning": "measure / step (action)", "beispiel": "Wir müssen Maßnahmen ergreifen.", "uebersetzung": "We need to take measures."}, {"word": "meistens", "artikel": null, "wortart": "Adverb", "meaning": "mostly / usually", "beispiel": "Ich frühstücke meistens um 7 Uhr.", "uebersetzung": "I usually have breakfast at 7 o'clock."}, {"word": "sich merken", "artikel": null, "wortart": "Verb", "meaning": "to remember / to memorise", "beispiel": "Ich kann mir den Namen nicht merken.", "uebersetzung": "I cannot remember the name."}, {"word": "die Möglichkeit", "artikel": "die", "wortart": "Nomen", "meaning": "possibility / opportunity", "beispiel": "Es gibt viele Möglichkeiten.", "uebersetzung": "There are many possibilities."}, {"word": "möglicherweise", "artikel": null, "wortart": "Adverb", "meaning": "possibly", "beispiel": "Möglicherweise kommt er nicht.", "uebersetzung": "Possibly he will not come."}, {"word": "nämlich", "artikel": null, "wortart": "Adverb", "meaning": "namely / you see", "beispiel": "Ich kann nicht kommen, ich bin nämlich krank.", "uebersetzung": "I cannot come, you see I am sick."}, {"word": "natürlich", "artikel": null, "wortart": "Adverb", "meaning": "of course / naturally", "beispiel": "Natürlich helfe ich dir.", "uebersetzung": "Of course I will help you."}, {"word": "neugierig", "artikel": null, "wortart": "Adjektiv", "meaning": "curious", "beispiel": "Kinder sind sehr neugierig.", "uebersetzung": "Children are very curious."}, {"word": "nicht mehr", "artikel": null, "wortart": "Adverb", "meaning": "no longer / not anymore", "beispiel": "Er wohnt nicht mehr hier.", "uebersetzung": "He no longer lives here."}, {"word": "nirgendwo", "artikel": null, "wortart": "Adverb", "meaning": "nowhere", "beispiel": "Ich finde es nirgendwo.", "uebersetzung": "I cannot find it anywhere."}, {"word": "nötig", "artikel": null, "wortart": "Adjektiv", "meaning": "necessary", "beispiel": "Ist das wirklich nötig?", "uebersetzung": "Is that really necessary?"}, {"word": "nutzen", "artikel": null, "wortart": "Verb", "meaning": "to use / to make use of", "beispiel": "Nutze deine Zeit gut.", "uebersetzung": "Use your time well."}, {"word": "obwohl", "artikel": null, "wortart": "Konjunktion", "meaning": "although / even though", "beispiel": "Obwohl es regnet, geht er spazieren.", "uebersetzung": "Although it is raining, he goes for a walk."}, {"word": "offensichtlich", "artikel": null, "wortart": "Adjektiv", "meaning": "obvious / evident", "beispiel": "Das ist offensichtlich falsch.", "uebersetzung": "That is obviously wrong."}, {"word": "die Ordnung", "artikel": "die", "wortart": "Nomen", "meaning": "order / tidiness", "beispiel": "Halte bitte Ordnung.", "uebersetzung": "Please keep things tidy."}, {"word": "die Pflicht", "artikel": "die", "wortart": "Nomen", "meaning": "duty / obligation", "beispiel": "Das ist meine Pflicht.", "uebersetzung": "That is my duty."}, {"word": "plötzlich", "artikel": null, "wortart": "Adverb", "meaning": "suddenly", "beispiel": "Plötzlich fing es an zu regnen.", "uebersetzung": "Suddenly it started to rain."}, {"word": "die Praxis", "artikel": "die", "wortart": "Nomen", "meaning": "practice / surgery", "beispiel": "In der Praxis ist das anders.", "uebersetzung": "In practice it is different."}, {"word": "prüfen", "artikel": null, "wortart": "Verb", "meaning": "to check / to examine", "beispiel": "Bitte prüfe das Dokument.", "uebersetzung": "Please check the document."}, {"word": "rechtzeitig", "artikel": null, "wortart": "Adverb", "meaning": "on time / in time", "beispiel": "Komm bitte rechtzeitig.", "uebersetzung": "Please come on time."}, {"word": "regelmäßig", "artikel": null, "wortart": "Adjektiv", "meaning": "regular / regularly", "beispiel": "Sport ist regelmäßige Bewegung.", "uebersetzung": "Sport is regular exercise."}, {"word": "die Reihe", "artikel": "die", "wortart": "Nomen", "meaning": "row / series / turn", "beispiel": "Du bist an der Reihe.", "uebersetzung": "It is your turn."}, {"word": "die Rolle", "artikel": "die", "wortart": "Nomen", "meaning": "role", "beispiel": "Er spielt eine wichtige Rolle.", "uebersetzung": "He plays an important role."}, {"word": "rücksichtsvoll", "artikel": null, "wortart": "Adjektiv", "meaning": "considerate", "beispiel": "Sie ist sehr rücksichtsvoll.", "uebersetzung": "She is very considerate."}, {"word": "die Ruhe", "artikel": "die", "wortart": "Nomen", "meaning": "peace / quiet / calm", "beispiel": "Ich brauche Ruhe.", "uebersetzung": "I need peace and quiet."}, {"word": "schaffen", "artikel": null, "wortart": "Verb", "meaning": "to manage / to create", "beispiel": "Das schaffe ich nicht alleine.", "uebersetzung": "I cannot manage that alone."}, {"word": "der Schaden", "artikel": "der", "wortart": "Nomen", "meaning": "damage", "beispiel": "Der Schaden ist groß.", "uebersetzung": "The damage is great."}, {"word": "scheinbar", "artikel": null, "wortart": "Adverb", "meaning": "seemingly / apparently", "beispiel": "Er ist scheinbar müde.", "uebersetzung": "He is seemingly tired."}, {"word": "scheitern", "artikel": null, "wortart": "Verb", "meaning": "to fail", "beispiel": "Das Projekt ist gescheitert.", "uebersetzung": "The project has failed."}, {"word": "schließlich", "artikel": null, "wortart": "Adverb", "meaning": "finally / after all", "beispiel": "Schließlich haben wir eine Lösung gefunden.", "uebersetzung": "Finally we found a solution."}, {"word": "der Schwerpunkt", "artikel": "der", "wortart": "Nomen", "meaning": "focus / main emphasis", "beispiel": "Der Schwerpunkt liegt auf Grammatik.", "uebersetzung": "The focus is on grammar."}, {"word": "selbstständig", "artikel": null, "wortart": "Adjektiv", "meaning": "independent / self-employed", "beispiel": "Sie arbeitet selbstständig.", "uebersetzung": "She works independently."}, {"word": "sichern", "artikel": null, "wortart": "Verb", "meaning": "to secure / to back up", "beispiel": "Sicher deine Daten regelmäßig.", "uebersetzung": "Back up your data regularly."}, {"word": "sinnvoll", "artikel": null, "wortart": "Adjektiv", "meaning": "sensible / meaningful", "beispiel": "Das ist eine sinnvolle Idee.", "uebersetzung": "That is a sensible idea."}, {"word": "sobald", "artikel": null, "wortart": "Konjunktion", "meaning": "as soon as", "beispiel": "Ruf mich an, sobald du ankommst.", "uebersetzung": "Call me as soon as you arrive."}, {"word": "sofern", "artikel": null, "wortart": "Konjunktion", "meaning": "provided that / as long as", "beispiel": "Sofern es klappt, machen wir es.", "uebersetzung": "Provided that it works, we will do it."}, {"word": "sogar", "artikel": null, "wortart": "Adverb", "meaning": "even", "beispiel": "Er spricht sogar Japanisch.", "uebersetzung": "He even speaks Japanese."}, {"word": "sowieso", "artikel": null, "wortart": "Adverb", "meaning": "anyway / in any case", "beispiel": "Das wäre sowieso passiert.", "uebersetzung": "That would have happened anyway."}, {"word": "der Standpunkt", "artikel": "der", "wortart": "Nomen", "meaning": "point of view / standpoint", "beispiel": "Was ist dein Standpunkt?", "uebersetzung": "What is your point of view?"}, {"word": "stattfinden", "artikel": null, "wortart": "Verb", "meaning": "to take place", "beispiel": "Das Konzert findet morgen statt.", "uebersetzung": "The concert takes place tomorrow."}, {"word": "ständig", "artikel": null, "wortart": "Adverb", "meaning": "constantly / always", "beispiel": "Er beschwert sich ständig.", "uebersetzung": "He complains constantly."}, {"word": "stören", "artikel": null, "wortart": "Verb", "meaning": "to disturb / to bother", "beispiel": "Darf ich Sie kurz stören?", "uebersetzung": "May I disturb you briefly?"}, {"word": "die Strecke", "artikel": "die", "wortart": "Nomen", "meaning": "route / distance / stretch", "beispiel": "Die Strecke ist 50 km lang.", "uebersetzung": "The route is 50 km long."}, {"word": "der Stress", "artikel": "der", "wortart": "Nomen", "meaning": "stress", "beispiel": "Ich habe zu viel Stress.", "uebersetzung": "I have too much stress."}, {"word": "die Tatsache", "artikel": "die", "wortart": "Nomen", "meaning": "fact", "beispiel": "Das ist eine bekannte Tatsache.", "uebersetzung": "That is a well-known fact."}, {"word": "tatsächlich", "artikel": null, "wortart": "Adverb", "meaning": "actually / indeed / really", "beispiel": "Das ist tatsächlich wahr.", "uebersetzung": "That is actually true."}, {"word": "teilen", "artikel": null, "wortart": "Verb", "meaning": "to share / to divide", "beispiel": "Wir teilen uns die Kosten.", "uebersetzung": "We share the costs."}, {"word": "der Termin", "artikel": "der", "wortart": "Nomen", "meaning": "appointment / deadline", "beispiel": "Ich habe einen Termin beim Arzt.", "uebersetzung": "I have a doctor's appointment."}, {"word": "trotzdem", "artikel": null, "wortart": "Adverb", "meaning": "nevertheless / still", "beispiel": "Es regnete, trotzdem gingen wir.", "uebersetzung": "It was raining, nevertheless we went."}, {"word": "übernehmen", "artikel": null, "wortart": "Verb", "meaning": "to take over / to take on", "beispiel": "Ich übernehme die Verantwortung.", "uebersetzung": "I take on the responsibility."}, {"word": "überraschen", "artikel": null, "wortart": "Verb", "meaning": "to surprise", "beispiel": "Das hat mich sehr überrascht.", "uebersetzung": "That surprised me very much."}, {"word": "überzeugen", "artikel": null, "wortart": "Verb", "meaning": "to convince", "beispiel": "Ich konnte ihn nicht überzeugen.", "uebersetzung": "I could not convince him."}, {"word": "umgehen", "artikel": null, "wortart": "Verb", "meaning": "to deal with / to handle", "beispiel": "Wie gehst du damit um?", "uebersetzung": "How do you deal with that?"}, {"word": "der Umstand", "artikel": "der", "wortart": "Nomen", "meaning": "circumstance", "beispiel": "Unter diesen Umständen ist es schwierig.", "uebersetzung": "Under these circumstances it is difficult."}, {"word": "unbedingt", "artikel": null, "wortart": "Adverb", "meaning": "absolutely / by all means", "beispiel": "Das musst du unbedingt sehen.", "uebersetzung": "You absolutely must see that."}, {"word": "ungefähr", "artikel": null, "wortart": "Adverb", "meaning": "approximately / about", "beispiel": "Es dauert ungefähr eine Stunde.", "uebersetzung": "It takes approximately one hour."}, {"word": "unterhalten", "artikel": null, "wortart": "Verb", "meaning": "to entertain / to converse", "beispiel": "Wir haben uns gut unterhalten.", "uebersetzung": "We had a good conversation."}, {"word": "unterstützen", "artikel": null, "wortart": "Verb", "meaning": "to support", "beispiel": "Ich unterstütze deine Entscheidung.", "uebersetzung": "I support your decision."}, {"word": "unterwegs", "artikel": null, "wortart": "Adverb", "meaning": "on the way / travelling", "beispiel": "Ich bin gerade unterwegs.", "uebersetzung": "I am on my way right now."}, {"word": "verändern", "artikel": null, "wortart": "Verb", "meaning": "to change", "beispiel": "Die Stadt hat sich verändert.", "uebersetzung": "The city has changed."}, {"word": "verbessern", "artikel": null, "wortart": "Verb", "meaning": "to improve", "beispiel": "Ich möchte mein Deutsch verbessern.", "uebersetzung": "I would like to improve my German."}, {"word": "verfügen", "artikel": null, "wortart": "Verb", "meaning": "to have available / to dispose of", "beispiel": "Er verfügt über viel Erfahrung.", "uebersetzung": "He has a lot of experience available."}, {"word": "vergleichen", "artikel": null, "wortart": "Verb", "meaning": "to compare", "beispiel": "Man kann die zwei nicht vergleichen.", "uebersetzung": "One cannot compare the two."}, {"word": "vermeiden", "artikel": null, "wortart": "Verb", "meaning": "to avoid", "beispiel": "Versuche Fehler zu vermeiden.", "uebersetzung": "Try to avoid mistakes."}, {"word": "vermutlich", "artikel": null, "wortart": "Adverb", "meaning": "presumably / probably", "beispiel": "Er ist vermutlich schon zu Hause.", "uebersetzung": "He is presumably already at home."}, {"word": "verringern", "artikel": null, "wortart": "Verb", "meaning": "to reduce / to decrease", "beispiel": "Wir müssen die Kosten verringern.", "uebersetzung": "We need to reduce the costs."}, {"word": "verschieben", "artikel": null, "wortart": "Verb", "meaning": "to postpone / to move", "beispiel": "Das Meeting wurde verschoben.", "uebersetzung": "The meeting was postponed."}, {"word": "verstehen", "artikel": null, "wortart": "Verb", "meaning": "to understand", "beispiel": "Ich verstehe das nicht.", "uebersetzung": "I do not understand that."}, {"word": "vertrauen", "artikel": null, "wortart": "Verb", "meaning": "to trust", "beispiel": "Ich vertraue dir.", "uebersetzung": "I trust you."}, {"word": "verwenden", "artikel": null, "wortart": "Verb", "meaning": "to use / to apply", "beispiel": "Wie kann ich das verwenden?", "uebersetzung": "How can I use that?"}, {"word": "verzichten", "artikel": null, "wortart": "Verb", "meaning": "to do without / to give up", "beispiel": "Ich verzichte auf Zucker.", "uebersetzung": "I am giving up sugar."}, {"word": "vollständig", "artikel": null, "wortart": "Adjektiv", "meaning": "complete / full", "beispiel": "Bitte fülle das Formular vollständig aus.", "uebersetzung": "Please fill in the form completely."}, {"word": "voraussichtlich", "artikel": null, "wortart": "Adverb", "meaning": "probably / expected to", "beispiel": "Er kommt voraussichtlich um 18 Uhr.", "uebersetzung": "He is expected to arrive at 6 pm."}, {"word": "der Vorteil", "artikel": "der", "wortart": "Nomen", "meaning": "advantage", "beispiel": "Das hat viele Vorteile.", "uebersetzung": "That has many advantages."}, {"word": "vorwärts", "artikel": null, "wortart": "Adverb", "meaning": "forwards / ahead", "beispiel": "Wir müssen vorwärts gehen.", "uebersetzung": "We need to move forwards."}, {"word": "wahrscheinlich", "artikel": null, "wortart": "Adverb", "meaning": "probably / likely", "beispiel": "Er kommt wahrscheinlich später.", "uebersetzung": "He will probably come later."}, {"word": "weder … noch", "artikel": null, "wortart": "Konjunktion", "meaning": "neither … nor", "beispiel": "Ich mag weder Kaffee noch Tee.", "uebersetzung": "I like neither coffee nor tea."}, {"word": "weiterhin", "artikel": null, "wortart": "Adverb", "meaning": "furthermore / still / in future", "beispiel": "Bitte weiterhin so machen.", "uebersetzung": "Please continue doing it like that."}, {"word": "sich wenden", "artikel": null, "wortart": "Verb", "meaning": "to turn to / to contact", "beispiel": "Wenden Sie sich an den Kundenservice.", "uebersetzung": "Contact the customer service."}, {"word": "wesentlich", "artikel": null, "wortart": "Adjektiv", "meaning": "essential / significant", "beispiel": "Das ist ein wesentlicher Unterschied.", "uebersetzung": "That is a significant difference."}, {"word": "wiederholen", "artikel": null, "wortart": "Verb", "meaning": "to repeat / to revise", "beispiel": "Bitte wiederhole die Frage.", "uebersetzung": "Please repeat the question."}, {"word": "wirksam", "artikel": null, "wortart": "Adjektiv", "meaning": "effective", "beispiel": "Das Mittel ist sehr wirksam.", "uebersetzung": "The remedy is very effective."}, {"word": "der Wunsch", "artikel": "der", "wortart": "Nomen", "meaning": "wish / desire", "beispiel": "Das ist mein größter Wunsch.", "uebersetzung": "That is my greatest wish."}, {"word": "zumindest", "artikel": null, "wortart": "Adverb", "meaning": "at least", "beispiel": "Zumindest hat er es versucht.", "uebersetzung": "At least he tried."}, {"word": "zunehmen", "artikel": null, "wortart": "Verb", "meaning": "to increase / to gain weight", "beispiel": "Die Temperatur nimmt zu.", "uebersetzung": "The temperature is increasing."}, {"word": "zuständig", "artikel": null, "wortart": "Adjektiv", "meaning": "responsible / in charge", "beispiel": "Wer ist dafür zuständig?", "uebersetzung": "Who is responsible for that?"}, {"word": "zuverlässig", "artikel": null, "wortart": "Adjektiv", "meaning": "reliable / dependable", "beispiel": "Er ist ein zuverlässiger Mitarbeiter.", "uebersetzung": "He is a reliable employee."}, {"word": "zwingen", "artikel": null, "wortart": "Verb", "meaning": "to force / to compel", "beispiel": "Niemand kann dich zwingen.", "uebersetzung": "Nobody can force you."}, {"word": "die Absicht", "artikel": "die", "wortart": "Nomen", "meaning": "intention / purpose", "beispiel": "Er hat gute Absichten.", "uebersetzung": "He has good intentions."}, {"word": "abbauen", "artikel": null, "wortart": "Verb", "meaning": "to reduce / to dismantle", "beispiel": "Wir müssen Stress abbauen.", "uebersetzung": "We need to reduce stress."}, {"word": "abgeben", "artikel": null, "wortart": "Verb", "meaning": "to hand in / to give away", "beispiel": "Gib bitte deine Hausaufgaben ab.", "uebersetzung": "Please hand in your homework."}, {"word": "ablehnen", "artikel": null, "wortart": "Verb", "meaning": "to reject / to decline", "beispiel": "Er hat das Angebot abgelehnt.", "uebersetzung": "He declined the offer."}, {"word": "abnehmen", "artikel": null, "wortart": "Verb", "meaning": "to lose weight / to decrease", "beispiel": "Sie möchte abnehmen.", "uebersetzung": "She wants to lose weight."}, {"word": "abreisen", "artikel": null, "wortart": "Verb", "meaning": "to depart / to leave", "beispiel": "Wann reist du ab?", "uebersetzung": "When do you depart?"}, {"word": "abschließen", "artikel": null, "wortart": "Verb", "meaning": "to complete / to lock", "beispiel": "Er hat sein Studium abgeschlossen.", "uebersetzung": "He completed his studies."}, {"word": "der Abschnitt", "artikel": "der", "wortart": "Nomen", "meaning": "section / paragraph / stage", "beispiel": "Lesen Sie den ersten Abschnitt.", "uebersetzung": "Read the first section."}, {"word": "absichtlich", "artikel": null, "wortart": "Adverb", "meaning": "deliberately / on purpose", "beispiel": "Das war absichtlich.", "uebersetzung": "That was deliberate."}, {"word": "achten", "artikel": null, "wortart": "Verb", "meaning": "to pay attention to / to respect", "beispiel": "Achte auf deine Gesundheit.", "uebersetzung": "Pay attention to your health."}, {"word": "die Aktion", "artikel": "die", "wortart": "Nomen", "meaning": "action / campaign / promotion", "beispiel": "Die Aktion läuft bis Sonntag.", "uebersetzung": "The promotion runs until Sunday."}, {"word": "aktuell", "artikel": null, "wortart": "Adjektiv", "meaning": "current / up to date", "beispiel": "Das ist nicht mehr aktuell.", "uebersetzung": "That is no longer up to date."}, {"word": "allgemein", "artikel": null, "wortart": "Adjektiv", "meaning": "general / in general", "beispiel": "Im Allgemeinen bin ich zufrieden.", "uebersetzung": "In general I am satisfied."}, {"word": "der Alltag", "artikel": "der", "wortart": "Nomen", "meaning": "everyday life / daily routine", "beispiel": "Im Alltag braucht man das oft.", "uebersetzung": "In everyday life you often need that."}, {"word": "anbieten", "artikel": null, "wortart": "Verb", "meaning": "to offer", "beispiel": "Das Restaurant bietet gutes Essen an.", "uebersetzung": "The restaurant offers good food."}, {"word": "die Angelegenheit", "artikel": "die", "wortart": "Nomen", "meaning": "matter / affair", "beispiel": "Das ist eine private Angelegenheit.", "uebersetzung": "That is a private matter."}, {"word": "angemessen", "artikel": null, "wortart": "Adjektiv", "meaning": "appropriate / suitable", "beispiel": "Das ist eine angemessene Reaktion.", "uebersetzung": "That is an appropriate reaction."}, {"word": "anhand", "artikel": null, "wortart": "Präposition", "meaning": "based on / by means of", "beispiel": "Anhand der Daten sehen wir das.", "uebersetzung": "Based on the data we can see that."}, {"word": "ankommen", "artikel": null, "wortart": "Verb", "meaning": "to arrive / to depend on", "beispiel": "Wann kommt der Zug an?", "uebersetzung": "When does the train arrive?"}, {"word": "anpassen", "artikel": null, "wortart": "Verb", "meaning": "to adapt / to adjust", "beispiel": "Du musst dich anpassen.", "uebersetzung": "You need to adapt."}, {"word": "ansehen", "artikel": null, "wortart": "Verb", "meaning": "to look at / to watch", "beispiel": "Darf ich mir das ansehen?", "uebersetzung": "May I look at that?"}, {"word": "ansonsten", "artikel": null, "wortart": "Adverb", "meaning": "otherwise / apart from that", "beispiel": "Ansonsten ist alles in Ordnung.", "uebersetzung": "Apart from that everything is fine."}, {"word": "anwenden", "artikel": null, "wortart": "Verb", "meaning": "to apply / to use", "beispiel": "Wie wendet man das an?", "uebersetzung": "How does one apply that?"}, {"word": "die Arbeit", "artikel": "die", "wortart": "Nomen", "meaning": "work / job / essay", "beispiel": "Die Arbeit macht mir Spaß.", "uebersetzung": "I enjoy the work."}, {"word": "der Aufwand", "artikel": "der", "wortart": "Nomen", "meaning": "effort / expense", "beispiel": "Der Aufwand ist zu groß.", "uebersetzung": "The effort is too great."}, {"word": "aufzeigen", "artikel": null, "wortart": "Verb", "meaning": "to show / to demonstrate", "beispiel": "Das zeigt die Probleme auf.", "uebersetzung": "That demonstrates the problems."}, {"word": "ausdrücken", "artikel": null, "wortart": "Verb", "meaning": "to express", "beispiel": "Wie soll ich das ausdrücken?", "uebersetzung": "How should I express that?"}, {"word": "ausführlich", "artikel": null, "wortart": "Adjektiv", "meaning": "detailed / thorough", "beispiel": "Kannst du das ausführlicher erklären?", "uebersetzung": "Can you explain that in more detail?"}, {"word": "ausgehen", "artikel": null, "wortart": "Verb", "meaning": "to go out / to assume", "beispiel": "Ich gehe davon aus, dass er kommt.", "uebersetzung": "I assume that he is coming."}, {"word": "auslösen", "artikel": null, "wortart": "Verb", "meaning": "to trigger / to cause", "beispiel": "Was hat das ausgelöst?", "uebersetzung": "What triggered that?"}, {"word": "auswählen", "artikel": null, "wortart": "Verb", "meaning": "to select / to choose", "beispiel": "Wähle bitte eine Option aus.", "uebersetzung": "Please select an option."}, {"word": "die Auswirkung", "artikel": "die", "wortart": "Nomen", "meaning": "effect / impact", "beispiel": "Das hat große Auswirkungen.", "uebersetzung": "That has great effects."}, {"word": "auszeichnen", "artikel": null, "wortart": "Verb", "meaning": "to distinguish / to award", "beispiel": "Er wurde für seine Arbeit ausgezeichnet.", "uebersetzung": "He was awarded for his work."}, {"word": "der Beitrag", "artikel": "der", "wortart": "Nomen", "meaning": "contribution / article / fee", "beispiel": "Er hat einen wichtigen Beitrag geleistet.", "uebersetzung": "He made an important contribution."}, {"word": "bemerken", "artikel": null, "wortart": "Verb", "meaning": "to notice / to remark", "beispiel": "Ich habe nichts bemerkt.", "uebersetzung": "I did not notice anything."}, {"word": "berücksichtigen", "artikel": null, "wortart": "Verb", "meaning": "to consider / to take into account", "beispiel": "Das müssen wir berücksichtigen.", "uebersetzung": "We need to take that into account."}, {"word": "die Beschwerde", "artikel": "die", "wortart": "Nomen", "meaning": "complaint", "beispiel": "Er hat eine Beschwerde eingereicht.", "uebersetzung": "He submitted a complaint."}, {"word": "bestätigen", "artikel": null, "wortart": "Verb", "meaning": "to confirm", "beispiel": "Können Sie das bestätigen?", "uebersetzung": "Can you confirm that?"}, {"word": "betonen", "artikel": null, "wortart": "Verb", "meaning": "to emphasise / to stress", "beispiel": "Ich möchte betonen, dass das wichtig ist.", "uebersetzung": "I would like to emphasise that this is important."}, {"word": "beträchtlich", "artikel": null, "wortart": "Adjektiv", "meaning": "considerable", "beispiel": "Das ist ein beträchtlicher Unterschied.", "uebersetzung": "That is a considerable difference."}, {"word": "sich bewerben", "artikel": null, "wortart": "Verb", "meaning": "to apply (for a job)", "beispiel": "Ich habe mich für die Stelle beworben.", "uebersetzung": "I applied for the position."}, {"word": "bezahlen", "artikel": null, "wortart": "Verb", "meaning": "to pay", "beispiel": "Wie möchten Sie bezahlen?", "uebersetzung": "How would you like to pay?"}, {"word": "beziehen", "artikel": null, "wortart": "Verb", "meaning": "to refer to / to receive", "beispiel": "Worauf beziehst du dich?", "uebersetzung": "What are you referring to?"}, {"word": "die Bildung", "artikel": "die", "wortart": "Nomen", "meaning": "education / formation", "beispiel": "Bildung ist sehr wichtig.", "uebersetzung": "Education is very important."}, {"word": "das Beispiel", "artikel": "das", "wortart": "Nomen", "meaning": "example", "beispiel": "Kannst du ein Beispiel geben?", "uebersetzung": "Can you give an example?"}, {"word": "dabei", "artikel": null, "wortart": "Adverb", "meaning": "in doing so / at the same time / there", "beispiel": "Ich helfe dabei.", "uebersetzung": "I will help with that."}, {"word": "dagegen", "artikel": null, "wortart": "Adverb", "meaning": "against it / on the other hand", "beispiel": "Ich habe nichts dagegen.", "uebersetzung": "I have nothing against it."}, {"word": "daran", "artikel": null, "wortart": "Adverb", "meaning": "at it / about it / by it", "beispiel": "Er arbeitet daran.", "uebersetzung": "He is working on it."}, {"word": "darlegen", "artikel": null, "wortart": "Verb", "meaning": "to explain / to set out", "beispiel": "Bitte lege deinen Plan dar.", "uebersetzung": "Please set out your plan."}, {"word": "die Debatte", "artikel": "die", "wortart": "Nomen", "meaning": "debate", "beispiel": "Die Debatte war interessant.", "uebersetzung": "The debate was interesting."}, {"word": "dementsprechend", "artikel": null, "wortart": "Adverb", "meaning": "accordingly / correspondingly", "beispiel": "Handle dementsprechend.", "uebersetzung": "Act accordingly."}, {"word": "die Diskussion", "artikel": "die", "wortart": "Nomen", "meaning": "discussion", "beispiel": "Wir haben eine lange Diskussion gehabt.", "uebersetzung": "We had a long discussion."}, {"word": "eindeutig", "artikel": null, "wortart": "Adjektiv", "meaning": "clear / unambiguous", "beispiel": "Das ist eindeutig falsch.", "uebersetzung": "That is clearly wrong."}, {"word": "einschätzen", "artikel": null, "wortart": "Verb", "meaning": "to assess / to estimate", "beispiel": "Wie schätzt du die Lage ein?", "uebersetzung": "How do you assess the situation?"}, {"word": "einstellen", "artikel": null, "wortart": "Verb", "meaning": "to hire / to adjust / to stop", "beispiel": "Die Firma hat neue Mitarbeiter eingestellt.", "uebersetzung": "The company hired new employees."}, {"word": "einverstanden", "artikel": null, "wortart": "Adjektiv", "meaning": "agreed / in agreement", "beispiel": "Ich bin einverstanden.", "uebersetzung": "I agree."}, {"word": "empfinden", "artikel": null, "wortart": "Verb", "meaning": "to feel / to perceive", "beispiel": "Ich empfinde das als unfair.", "uebersetzung": "I perceive that as unfair."}, {"word": "die Energie", "artikel": "die", "wortart": "Nomen", "meaning": "energy", "beispiel": "Ich habe keine Energie mehr.", "uebersetzung": "I have no more energy."}, {"word": "enthalten", "artikel": null, "wortart": "Verb", "meaning": "to contain", "beispiel": "Das Produkt enthält Zucker.", "uebersetzung": "The product contains sugar."}, {"word": "enttäuscht", "artikel": null, "wortart": "Adjektiv", "meaning": "disappointed", "beispiel": "Ich bin sehr enttäuscht.", "uebersetzung": "I am very disappointed."}, {"word": "erfordern", "artikel": null, "wortart": "Verb", "meaning": "to require / to demand", "beispiel": "Das erfordert viel Geduld.", "uebersetzung": "That requires a lot of patience."}, {"word": "erledigen", "artikel": null, "wortart": "Verb", "meaning": "to deal with / to complete", "beispiel": "Ich muss das noch erledigen.", "uebersetzung": "I still need to deal with that."}, {"word": "ermitteln", "artikel": null, "wortart": "Verb", "meaning": "to investigate / to determine", "beispiel": "Die Polizei ermittelt.", "uebersetzung": "The police are investigating."}, {"word": "erreichen", "artikel": null, "wortart": "Verb", "meaning": "to reach / to achieve", "beispiel": "Was willst du erreichen?", "uebersetzung": "What do you want to achieve?"}, {"word": "der Erwachsene", "artikel": "der", "wortart": "Nomen", "meaning": "adult", "beispiel": "Das ist nur für Erwachsene.", "uebersetzung": "That is only for adults."}, {"word": "erzwingen", "artikel": null, "wortart": "Verb", "meaning": "to force / to compel", "beispiel": "Man kann Respekt nicht erzwingen.", "uebersetzung": "You cannot force respect."}, {"word": "fähig", "artikel": null, "wortart": "Adjektiv", "meaning": "capable / able", "beispiel": "Er ist sehr fähig.", "uebersetzung": "He is very capable."}, {"word": "fair", "artikel": null, "wortart": "Adjektiv", "meaning": "fair", "beispiel": "Das ist nicht fair.", "uebersetzung": "That is not fair."}, {"word": "festlegen", "artikel": null, "wortart": "Verb", "meaning": "to set / to establish / to fix", "beispiel": "Wann legen wir den Termin fest?", "uebersetzung": "When do we fix the appointment?"}, {"word": "flexibel", "artikel": null, "wortart": "Adjektiv", "meaning": "flexible", "beispiel": "Ich bin zeitlich flexibel.", "uebersetzung": "I am flexible in terms of time."}, {"word": "flüssig", "artikel": null, "wortart": "Adjektiv", "meaning": "fluent / liquid", "beispiel": "Sie spricht flüssig Deutsch.", "uebersetzung": "She speaks German fluently."}, {"word": "folglich", "artikel": null, "wortart": "Adverb", "meaning": "consequently / therefore", "beispiel": "Er war krank, folglich blieb er zuhause.", "uebersetzung": "He was sick, consequently he stayed home."}, {"word": "fordern", "artikel": null, "wortart": "Verb", "meaning": "to demand / to require", "beispiel": "Die Gewerkschaft fordert höhere Löhne.", "uebersetzung": "The union demands higher wages."}, {"word": "formulieren", "artikel": null, "wortart": "Verb", "meaning": "to formulate / to phrase", "beispiel": "Kannst du das anders formulieren?", "uebersetzung": "Can you phrase that differently?"}, {"word": "der Fortschritt", "artikel": "der", "wortart": "Nomen", "meaning": "progress / advance", "beispiel": "Wir machen gute Fortschritte.", "uebersetzung": "We are making good progress."}, {"word": "funktionieren", "artikel": null, "wortart": "Verb", "meaning": "to work / to function", "beispiel": "Das funktioniert nicht.", "uebersetzung": "That does not work."}, {"word": "gründen", "artikel": null, "wortart": "Verb", "meaning": "to found / to establish", "beispiel": "Er hat eine Firma gegründet.", "uebersetzung": "He founded a company."}, {"word": "günstig", "artikel": null, "wortart": "Adjektiv", "meaning": "cheap / favourable", "beispiel": "Das ist sehr günstig.", "uebersetzung": "That is very cheap."}, {"word": "herstellen", "artikel": null, "wortart": "Verb", "meaning": "to produce / to manufacture", "beispiel": "Das Produkt wird hier hergestellt.", "uebersetzung": "The product is manufactured here."}, {"word": "die Herausforderung", "artikel": "die", "wortart": "Nomen", "meaning": "challenge", "beispiel": "Das ist eine große Herausforderung.", "uebersetzung": "That is a great challenge."}, {"word": "hinsehen", "artikel": null, "wortart": "Verb", "meaning": "to look at", "beispiel": "Sieh genau hin.", "uebersetzung": "Look carefully."}, {"word": "hoffen", "artikel": null, "wortart": "Verb", "meaning": "to hope", "beispiel": "Ich hoffe, dass es klappt.", "uebersetzung": "I hope that it works out."}, {"word": "die Idee", "artikel": "die", "wortart": "Nomen", "meaning": "idea", "beispiel": "Das ist eine gute Idee.", "uebersetzung": "That is a good idea."}, {"word": "immer noch", "artikel": null, "wortart": "Adverb", "meaning": "still", "beispiel": "Er wohnt immer noch dort.", "uebersetzung": "He still lives there."}, {"word": "das Interesse", "artikel": "das", "wortart": "Nomen", "meaning": "interest", "beispiel": "Ich habe kein Interesse daran.", "uebersetzung": "I have no interest in that."}, {"word": "klären", "artikel": null, "wortart": "Verb", "meaning": "to clarify / to resolve", "beispiel": "Das müssen wir klären.", "uebersetzung": "We need to clarify that."}, {"word": "das Konzept", "artikel": "das", "wortart": "Nomen", "meaning": "concept / plan", "beispiel": "Das Konzept gefällt mir.", "uebersetzung": "I like the concept."}, {"word": "die Kritik", "artikel": "die", "wortart": "Nomen", "meaning": "criticism / critique", "beispiel": "Er reagierte gut auf die Kritik.", "uebersetzung": "He responded well to the criticism."}, {"word": "langfristig", "artikel": null, "wortart": "Adjektiv", "meaning": "long-term", "beispiel": "Das ist eine langfristige Lösung.", "uebersetzung": "That is a long-term solution."}, {"word": "der Lebensunterhalt", "artikel": "der", "wortart": "Nomen", "meaning": "livelihood", "beispiel": "Wie verdienst du deinen Lebensunterhalt?", "uebersetzung": "How do you earn your livelihood?"}, {"word": "leihen", "artikel": null, "wortart": "Verb", "meaning": "to lend / to borrow", "beispiel": "Kannst du mir Geld leihen?", "uebersetzung": "Can you lend me money?"}, {"word": "sich lohnen", "artikel": null, "wortart": "Verb", "meaning": "to be worth it", "beispiel": "Das lohnt sich wirklich.", "uebersetzung": "That is really worth it."}, {"word": "der Mangel", "artikel": "der", "wortart": "Nomen", "meaning": "lack / shortage / deficiency", "beispiel": "Es gibt einen Mangel an Ärzten.", "uebersetzung": "There is a shortage of doctors."}, {"word": "mittlerweile", "artikel": null, "wortart": "Adverb", "meaning": "by now / meanwhile", "beispiel": "Mittlerweile bin ich damit fertig.", "uebersetzung": "By now I am done with it."}, {"word": "nachdenken", "artikel": null, "wortart": "Verb", "meaning": "to think about / to reflect", "beispiel": "Ich muss darüber nachdenken.", "uebersetzung": "I need to think about that."}, {"word": "die Nachfrage", "artikel": "die", "wortart": "Nomen", "meaning": "demand / enquiry", "beispiel": "Die Nachfrage ist gestiegen.", "uebersetzung": "The demand has increased."}, {"word": "der Nachteil", "artikel": "der", "wortart": "Nomen", "meaning": "disadvantage", "beispiel": "Was sind die Nachteile?", "uebersetzung": "What are the disadvantages?"}, {"word": "notwendig", "artikel": null, "wortart": "Adjektiv", "meaning": "necessary / essential", "beispiel": "Das ist notwendig.", "uebersetzung": "That is necessary."}, {"word": "die Qualität", "artikel": "die", "wortart": "Nomen", "meaning": "quality", "beispiel": "Die Qualität ist sehr gut.", "uebersetzung": "The quality is very good."}, {"word": "die Reaktion", "artikel": "die", "wortart": "Nomen", "meaning": "reaction / response", "beispiel": "Seine Reaktion hat mich überrascht.", "uebersetzung": "His reaction surprised me."}, {"word": "reichen", "artikel": null, "wortart": "Verb", "meaning": "to be enough / to reach", "beispiel": "Das Geld reicht nicht.", "uebersetzung": "The money is not enough."}, {"word": "riskieren", "artikel": null, "wortart": "Verb", "meaning": "to risk", "beispiel": "Das will ich nicht riskieren.", "uebersetzung": "I do not want to risk that."}, {"word": "der Satz", "artikel": "der", "wortart": "Nomen", "meaning": "sentence / set / rate", "beispiel": "Bilde einen Satz mit diesem Wort.", "uebersetzung": "Form a sentence with this word."}, {"word": "schätzen", "artikel": null, "wortart": "Verb", "meaning": "to estimate / to appreciate", "beispiel": "Ich schätze deine Hilfe sehr.", "uebersetzung": "I really appreciate your help."}, {"word": "schrittweise", "artikel": null, "wortart": "Adverb", "meaning": "step by step / gradually", "beispiel": "Wir gehen schrittweise vor.", "uebersetzung": "We proceed step by step."}, {"word": "schwierig", "artikel": null, "wortart": "Adjektiv", "meaning": "difficult / tricky", "beispiel": "Das ist eine schwierige Situation.", "uebersetzung": "That is a difficult situation."}, {"word": "die Sicherheit", "artikel": "die", "wortart": "Nomen", "meaning": "safety / security / certainty", "beispiel": "Sicherheit geht vor.", "uebersetzung": "Safety comes first."}, {"word": "sorgfältig", "artikel": null, "wortart": "Adjektiv", "meaning": "careful / thorough", "beispiel": "Arbeite sorgfältig.", "uebersetzung": "Work carefully."}, {"word": "die Sprache", "artikel": "die", "wortart": "Nomen", "meaning": "language / speech", "beispiel": "Deutsch ist eine schwierige Sprache.", "uebersetzung": "German is a difficult language."}, {"word": "die Statistik", "artikel": "die", "wortart": "Nomen", "meaning": "statistics", "beispiel": "Die Statistik zeigt einen Anstieg.", "uebersetzung": "The statistics show an increase."}, {"word": "steigernd", "artikel": null, "wortart": "Adjektiv", "meaning": "increasing", "beispiel": "Die steigende Nachfrage ist positiv.", "uebersetzung": "The increasing demand is positive."}, {"word": "der Überblick", "artikel": "der", "wortart": "Nomen", "meaning": "overview / overview", "beispiel": "Ich habe den Überblick verloren.", "uebersetzung": "I have lost the overview."}, {"word": "überprüfen", "artikel": null, "wortart": "Verb", "meaning": "to verify / to check", "beispiel": "Bitte überprüfe die Daten.", "uebersetzung": "Please verify the data."}, {"word": "der Umgang", "artikel": "der", "wortart": "Nomen", "meaning": "handling / interaction / dealing with", "beispiel": "Der Umgang mit Kindern ist wichtig.", "uebersetzung": "The interaction with children is important."}, {"word": "umsetzen", "artikel": null, "wortart": "Verb", "meaning": "to implement / to put into practice", "beispiel": "Wir müssen den Plan umsetzen.", "uebersetzung": "We need to implement the plan."}, {"word": "unabhängig", "artikel": null, "wortart": "Adjektiv", "meaning": "independent", "beispiel": "Sie ist finanziell unabhängig.", "uebersetzung": "She is financially independent."}, {"word": "unterschiedlich", "artikel": null, "wortart": "Adjektiv", "meaning": "different / varied", "beispiel": "Die Meinungen sind sehr unterschiedlich.", "uebersetzung": "The opinions are very different."}, {"word": "verantwortlich", "artikel": null, "wortart": "Adjektiv", "meaning": "responsible", "beispiel": "Wer ist dafür verantwortlich?", "uebersetzung": "Who is responsible for that?"}, {"word": "verhalten", "artikel": null, "wortart": "Verb", "meaning": "to behave", "beispiel": "Er verhält sich seltsam.", "uebersetzung": "He is behaving strangely."}, {"word": "verlassen", "artikel": null, "wortart": "Verb", "meaning": "to leave / to rely on", "beispiel": "Wann hast du das Haus verlassen?", "uebersetzung": "When did you leave the house?"}, {"word": "verlieren", "artikel": null, "wortart": "Verb", "meaning": "to lose", "beispiel": "Ich habe meinen Schlüssel verloren.", "uebersetzung": "I have lost my key."}, {"word": "verwalten", "artikel": null, "wortart": "Verb", "meaning": "to manage / to administer", "beispiel": "Er verwaltet das Budget.", "uebersetzung": "He manages the budget."}, {"word": "die Vielfalt", "artikel": "die", "wortart": "Nomen", "meaning": "diversity / variety", "beispiel": "Die Vielfalt der Kulturen ist schön.", "uebersetzung": "The diversity of cultures is beautiful."}, {"word": "vorstellen", "artikel": null, "wortart": "Verb", "meaning": "to introduce / to imagine", "beispiel": "Darf ich mich vorstellen?", "uebersetzung": "May I introduce myself?"}, {"word": "die Wahrheit", "artikel": "die", "wortart": "Nomen", "meaning": "truth", "beispiel": "Sag mir die Wahrheit.", "uebersetzung": "Tell me the truth."}, {"word": "wechseln", "artikel": null, "wortart": "Verb", "meaning": "to change / to switch", "beispiel": "Ich möchte den Job wechseln.", "uebersetzung": "I want to change my job."}, {"word": "die Wirkung", "artikel": "die", "wortart": "Nomen", "meaning": "effect / impact", "beispiel": "Das Medikament hat eine gute Wirkung.", "uebersetzung": "The medication has a good effect."}, {"word": "wünschen", "artikel": null, "wortart": "Verb", "meaning": "to wish", "beispiel": "Ich wünsche dir alles Gute.", "uebersetzung": "I wish you all the best."}, {"word": "die Zusammenarbeit", "artikel": "die", "wortart": "Nomen", "meaning": "cooperation / collaboration", "beispiel": "Die Zusammenarbeit war sehr gut.", "uebersetzung": "The cooperation was very good."}, {"word": "zusammenfassen", "artikel": null, "wortart": "Verb", "meaning": "to summarise", "beispiel": "Kannst du das kurz zusammenfassen?", "uebersetzung": "Can you briefly summarise that?"}, {"word": "zustimmen", "artikel": null, "wortart": "Verb", "meaning": "to agree / to approve", "beispiel": "Ich stimme dir zu.", "uebersetzung": "I agree with you."}];
+
 // ── State ──────────────────────────────────────────────────────────────
-let GH_USER = '', GH_REPO = '', GH_TOKEN = '', ANT_KEY = '', NOTION_TOKEN = '';
-// Your Notion Vokabelliste database ID — update if it ever changes
+let GH_USER = '', GH_REPO = '', GH_TOKEN = '', NOTION_TOKEN = '';
 const NOTION_DB_ID = '61fb3364-dc8b-4418-a87c-4a59d9ab7eed';
 let vocabList = [], vocabSha = null;
 let reviewWords = [], reviewIdx = 0, reviewFlipped = false;
 let knownCount = 0, unsureCount = 0;
-let newFlipped = false, currentNewWord = null;
-let seenNewWords = new Set();
+let newQueue = [], newIdx = 0, newFlipped = false, currentNewWord = null;
 
 // ── Setup ──────────────────────────────────────────────────────────────
 async function startApp() {
   GH_USER      = document.getElementById('gh-user').value.trim();
   GH_REPO      = document.getElementById('gh-repo').value.trim();
   GH_TOKEN     = document.getElementById('gh-token').value.trim();
-  ANT_KEY      = document.getElementById('ant-key').value.trim();
   NOTION_TOKEN = document.getElementById('notion-token').value.trim();
-
   const err = document.getElementById('setup-error');
-  if (!GH_USER || !GH_REPO || !GH_TOKEN || !ANT_KEY) {
-    err.innerHTML = '<div class="status error"><i class="ti ti-alert-circle" aria-hidden="true"></i> Please fill in all four fields.</div>';
+  if (!GH_USER || !GH_REPO || !GH_TOKEN) {
+    err.innerHTML = '<div class="status error"><i class="ti ti-alert-circle"></i> Please fill in GitHub username, repo and token.</div>';
     return;
   }
-  err.innerHTML = '<div class="status loading"><i class="ti ti-loader" aria-hidden="true"></i> Connecting…</div>';
-
+  err.innerHTML = '<div class="status loading"><i class="ti ti-loader"></i> Connecting…</div>';
   const ok = await loadVocab();
   if (!ok) return;
-
   err.innerHTML = '';
   document.getElementById('screen-setup').style.display = 'none';
   document.getElementById('screen-app').style.display = 'block';
   startReview();
-  loadNewWord();
+  buildNewQueue();
+  showNewWord();
 }
 
 function resetApp() {
-  GH_USER = GH_REPO = GH_TOKEN = ANT_KEY = NOTION_TOKEN = '';
+  GH_USER = GH_REPO = GH_TOKEN = NOTION_TOKEN = '';
   vocabList = []; vocabSha = null;
   document.getElementById('screen-app').style.display = 'none';
   document.getElementById('screen-setup').style.display = 'block';
@@ -435,21 +264,12 @@ async function ghGet(path) {
 }
 
 async function ghPut(path, content, sha, message) {
-  const body = {
-    message,
-    content: btoa(unescape(encodeURIComponent(content))),
-    sha
-  };
   const resp = await fetch(
     `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`,
     {
       method: 'PUT',
-      headers: {
-        Authorization: `Bearer ${GH_TOKEN}`,
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
+      headers: { Authorization: `Bearer ${GH_TOKEN}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha })
     }
   );
   if (!resp.ok) throw new Error(`GitHub ${resp.status}: ${await resp.text()}`);
@@ -466,70 +286,127 @@ async function loadVocab() {
     return true;
   } catch (e) {
     const err = document.getElementById('setup-error');
-    if (e.message.includes('404')) {
-      err.innerHTML = `<div class="status error"><i class="ti ti-alert-circle" aria-hidden="true"></i> Could not find <code>data/vocab.json</code> in <strong>${GH_USER}/${GH_REPO}</strong>. Make sure you uploaded that file.</div>`;
-    } else {
-      err.innerHTML = `<div class="status error"><i class="ti ti-alert-circle" aria-hidden="true"></i> ${e.message}</div>`;
-    }
+    err.innerHTML = e.message.includes('404')
+      ? `<div class="status error"><i class="ti ti-alert-circle"></i> Could not find <code>data/vocab.json</code> in <strong>${GH_USER}/${GH_REPO}</strong>.</div>`
+      : `<div class="status error"><i class="ti ti-alert-circle"></i> ${e.message}</div>`;
     return false;
   }
 }
 
 async function saveVocabToGitHub() {
-  const content = JSON.stringify(vocabList, null, 2);
-  const result = await ghPut(VOCAB_PATH, content, vocabSha, `Add word: ${currentNewWord.word}`);
+  const result = await ghPut(VOCAB_PATH, JSON.stringify(vocabList, null, 2), vocabSha, `Add word: ${currentNewWord.word}`);
   vocabSha = result.content.sha;
 }
 
-// ── Anthropic API ──────────────────────────────────────────────────────
-async function fetchNewWord() {
-  const knownList = vocabList.map(w => w.word).join(', ');
-  const seenList  = [...seenNewWords].join(', ');
-
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+// ── Notion API ─────────────────────────────────────────────────────────
+async function saveToNotion(entry) {
+  if (!NOTION_TOKEN) return;
+  const properties = {
+    'Wort':         { title: [{ text: { content: entry.word } }] },
+    'Bedeutung':    { rich_text: [{ text: { content: entry.meaning } }] },
+    'Beispielsatz': { rich_text: [{ text: { content: entry.beispiel || '' } }] },
+    'Übersetzung':  { rich_text: [{ text: { content: entry.uebersetzung || '' } }] },
+    'Niveau':       { select: { name: 'B1' } }
+  };
+  if (entry.artikel) properties['Artikel'] = { select: { name: entry.artikel } };
+  if (entry.wortart) properties['Wortart'] = { select: { name: entry.wortart } };
+  const resp = await fetch('https://api.notion.com/v1/pages', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': ANT_KEY,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-client-side-api-key-access': 'true'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 300,
-      system: 'You are a German language teacher. Return ONLY a JSON object, no markdown, no explanation.',
-      messages: [{
-        role: 'user',
-        content: `Give me ONE German word at B1 level that is NOT in this list: [${knownList || 'none'}] and NOT in this seen list: [${seenList || 'none'}].
-Return ONLY this JSON object:
-{"word":"...","artikel":"der/die/das or null","wortart":"Nomen/Verb/Adjektiv/etc","meaning":"English meaning","beispiel":"Example sentence in German","uebersetzung":"English translation of example"}`
-      }]
-    })
+    headers: { 'Authorization': `Bearer ${NOTION_TOKEN}`, 'Notion-Version': '2026-03-11', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ parent: { database_id: NOTION_DB_ID }, properties })
   });
+  if (!resp.ok) throw new Error(`Notion ${resp.status}: ${await resp.text()}`);
+}
 
-  if (!resp.ok) {
-    const t = await resp.text();
-    throw new Error(`Anthropic ${resp.status}: ${t}`);
+// ── New word queue ─────────────────────────────────────────────────────
+function buildNewQueue() {
+  // Filter out words the user already knows
+  const knownWords = new Set(vocabList.map(w => w.word));
+  const unseen = B1_WORDS.filter(w => !knownWords.has(w.word));
+  // Shuffle
+  newQueue = unseen.sort(() => Math.random() - 0.5);
+  newIdx = 0;
+  updateNewCounter();
+}
+
+function updateNewCounter() {
+  const remaining = newQueue.length - newIdx;
+  document.getElementById('new-counter').textContent =
+    `${remaining} word${remaining !== 1 ? 's' : ''} remaining in this session`;
+}
+
+function showNewWord() {
+  if (newIdx >= newQueue.length) {
+    document.getElementById('nw-front').textContent = 'All done!';
+    document.getElementById('nw-front-meta').textContent = 'You have seen all built-in B1 words this session.';
+    document.getElementById('new-hint').style.display = 'none';
+    document.getElementById('new-btns').style.display = 'none';
+    return;
   }
-  const data = await resp.json();
-  const text = data.content[0].text.replace(/```json|```/g, '').trim();
-  return JSON.parse(text);
+  currentNewWord = newQueue[newIdx];
+  newFlipped = false;
+  document.getElementById('new-card').classList.remove('flipped');
+  document.getElementById('nw-front').textContent = currentNewWord.word;
+  document.getElementById('nw-front-meta').textContent = [currentNewWord.artikel, currentNewWord.wortart].filter(Boolean).join(' · ');
+  document.getElementById('nw-back-meaning').textContent = currentNewWord.meaning;
+  document.getElementById('nw-back-ex').textContent = currentNewWord.beispiel
+    ? `"${currentNewWord.beispiel}" — ${currentNewWord.uebersetzung}` : '';
+  document.getElementById('new-hint').style.display = 'flex';
+  document.getElementById('new-btns').style.display = 'none';
+  document.getElementById('save-status').innerHTML = '';
+  const btn = document.getElementById('save-btn');
+  btn.disabled = false;
+  btn.innerHTML = '<i class="ti ti-bookmark"></i> Add to my list';
+  updateNewCounter();
 }
 
-// ── Global status ──────────────────────────────────────────────────────
-function setStatus(msg, type) {
-  const el = document.getElementById('global-status');
-  el.innerHTML = msg ? `<div class="status ${type}">${msg}</div>` : '';
+function nextNewWord() {
+  newIdx++;
+  showNewWord();
 }
 
-// ── Review tab ─────────────────────────────────────────────────────────
+async function saveWord() {
+  if (!currentNewWord) return;
+  const btn = document.getElementById('save-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="ti ti-loader"></i> Saving…';
+  document.getElementById('save-status').innerHTML = '';
+  const entry = {
+    word: currentNewWord.word, artikel: currentNewWord.artikel || null,
+    wortart: currentNewWord.wortart || null, meaning: currentNewWord.meaning,
+    beispiel: currentNewWord.beispiel || '', uebersetzung: currentNewWord.uebersetzung || '', niveau: 'B1'
+  };
+  try {
+    vocabList.push(entry);
+    await saveVocabToGitHub();
+    try { await saveToNotion(entry); } catch(ne) {
+      document.getElementById('save-status').innerHTML =
+        `<div class="status success"><i class="ti ti-check"></i> Saved to GitHub!</div><div class="status error" style="margin-top:6px"><i class="ti ti-alert-circle"></i> Notion: ${ne.message}</div>`;
+      document.getElementById('review-count').textContent = vocabList.length;
+      btn.innerHTML = '<i class="ti ti-bookmark-filled"></i> Saved!';
+      return;
+    }
+    document.getElementById('review-count').textContent = vocabList.length;
+    const where = NOTION_TOKEN ? 'GitHub and Notion' : 'GitHub';
+    document.getElementById('save-status').innerHTML =
+      `<div class="status success"><i class="ti ti-check"></i> "${currentNewWord.word}" saved to ${where}!</div>`;
+    btn.innerHTML = '<i class="ti ti-bookmark-filled"></i> Saved!';
+  } catch(e) {
+    vocabList.pop();
+    document.getElementById('save-status').innerHTML =
+      `<div class="status error"><i class="ti ti-alert-circle"></i> ${e.message}</div>`;
+    btn.disabled = false;
+    btn.innerHTML = '<i class="ti ti-bookmark"></i> Add to my list';
+  }
+}
+
+// ── Review ─────────────────────────────────────────────────────────────
 function startReview() {
   knownCount = 0; unsureCount = 0;
   reviewWords = [...vocabList].sort(() => Math.random() - 0.5);
   reviewIdx = 0;
   document.getElementById('review-done').style.display = 'none';
   document.getElementById('review-count').textContent = vocabList.length;
-
   if (reviewWords.length === 0) {
     document.getElementById('review-empty').style.display = 'block';
     document.getElementById('review-content').style.display = 'none';
@@ -553,18 +430,14 @@ function showReviewCard() {
   document.getElementById('review-card').classList.remove('flipped');
   document.getElementById('rv-front').textContent = w.meaning || '(no meaning saved)';
   document.getElementById('rv-back-word').textContent = w.word || '';
-  document.getElementById('rv-back-meta').textContent =
-    [w.artikel ? `article: ${w.artikel}` : '', w.wortart || ''].filter(Boolean).join(' · ');
-  document.getElementById('rv-back-ex').textContent = w.beispiel
-    ? `"${w.beispiel}"${w.uebersetzung ? ' — ' + w.uebersetzung : ''}`
-    : '';
+  document.getElementById('rv-back-meta').textContent = [w.artikel ? `article: ${w.artikel}` : '', w.wortart || ''].filter(Boolean).join(' · ');
+  document.getElementById('rv-back-ex').textContent = w.beispiel ? `"${w.beispiel}"${w.uebersetzung ? ' — ' + w.uebersetzung : ''}` : '';
   document.getElementById('review-hint').style.display = 'flex';
   document.getElementById('review-btns').style.display = 'none';
   document.getElementById('sc-known').textContent = knownCount;
   document.getElementById('sc-unsure').textContent = unsureCount;
   document.getElementById('sc-left').textContent = reviewWords.length - reviewIdx;
-  document.getElementById('review-progress').textContent =
-    `Card ${reviewIdx + 1} of ${reviewWords.length}`;
+  document.getElementById('review-progress').textContent = `Card ${reviewIdx + 1} of ${reviewWords.length}`;
 }
 
 function reviewAnswer(knew) {
@@ -573,157 +446,20 @@ function reviewAnswer(knew) {
   showReviewCard();
 }
 
-// ── New words tab ──────────────────────────────────────────────────────
-async function loadNewWord() {
-  document.getElementById('new-hint').style.display = 'flex';
-  document.getElementById('new-btns').style.display = 'none';
-  document.getElementById('new-card').classList.remove('flipped');
-  document.getElementById('save-status').innerHTML = '';
-  document.getElementById('nw-front').textContent = '…';
-  document.getElementById('nw-front-meta').textContent = '';
-  document.getElementById('new-progress').textContent = 'Loading…';
-  newFlipped = false;
-
-  const saveBtn = document.getElementById('save-btn');
-  saveBtn.disabled = false;
-  saveBtn.innerHTML = '<i class="ti ti-bookmark" aria-hidden="true"></i> Add to my list';
-
-  try {
-    const word = await fetchNewWord();
-    currentNewWord = word;
-    seenNewWords.add(word.word);
-
-    document.getElementById('nw-front').textContent = word.word;
-    document.getElementById('nw-front-meta').textContent =
-      [word.artikel, word.wortart].filter(Boolean).join(' · ');
-    document.getElementById('nw-back-meaning').textContent = word.meaning;
-    document.getElementById('nw-back-ex').textContent = word.beispiel
-      ? `"${word.beispiel}" — ${word.uebersetzung}`
-      : '';
-    document.getElementById('new-progress').textContent =
-      `${seenNewWords.size} new word${seenNewWords.size !== 1 ? 's' : ''} seen this session`;
-  } catch (e) {
-    document.getElementById('nw-front').textContent = 'Error';
-    document.getElementById('new-progress').textContent = 'Could not load word.';
-    document.getElementById('save-status').innerHTML =
-      `<div class="status error"><i class="ti ti-alert-circle" aria-hidden="true"></i> ${e.message}</div>`;
-    document.getElementById('new-btns').style.display = 'flex';
-  }
-}
-
-// ── Notion API ─────────────────────────────────────────────────────────
-async function saveToNotion(entry) {
-  if (!NOTION_TOKEN) return; // skip if not configured
-
-  const properties = {
-    'Wort':         { title: [{ text: { content: entry.word } }] },
-    'Bedeutung':    { rich_text: [{ text: { content: entry.meaning } }] },
-    'Beispielsatz': { rich_text: [{ text: { content: entry.beispiel || '' } }] },
-    'Übersetzung':  { rich_text: [{ text: { content: entry.uebersetzung || '' } }] },
-    'Niveau':       { select: { name: 'B1' } }
-  };
-
-  // Artikel is a select field — only set if we have a value
-  if (entry.artikel) {
-    properties['Artikel'] = { select: { name: entry.artikel } };
-  }
-  if (entry.wortart) {
-    properties['Wortart'] = { select: { name: entry.wortart } };
-  }
-
-  const resp = await fetch('https://api.notion.com/v1/pages', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${NOTION_TOKEN}`,
-      'Notion-Version': '2026-03-11',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      parent: { database_id: NOTION_DB_ID },
-      properties
-    })
-  });
-
-  if (!resp.ok) {
-    const t = await resp.text();
-    throw new Error(`Notion ${resp.status}: ${t}`);
-  }
-}
-
-async function saveWord() {
-  if (!currentNewWord) return;
-  const btn = document.getElementById('save-btn');
-  btn.disabled = true;
-  btn.innerHTML = '<i class="ti ti-loader" aria-hidden="true"></i> Saving…';
-  document.getElementById('save-status').innerHTML = '';
-
-  const newEntry = {
-    word:        currentNewWord.word,
-    artikel:     currentNewWord.artikel || null,
-    wortart:     currentNewWord.wortart || null,
-    meaning:     currentNewWord.meaning,
-    beispiel:    currentNewWord.beispiel || '',
-    uebersetzung:currentNewWord.uebersetzung || '',
-    niveau:      'B1'
-  };
-
-  try {
-    // Save to GitHub
-    vocabList.push(newEntry);
-    await saveVocabToGitHub();
-
-    // Save to Notion in parallel (won't block if token missing)
-    try {
-      await saveToNotion(newEntry);
-    } catch (notionErr) {
-      // Notion failed but GitHub succeeded — warn but don't block
-      document.getElementById('save-status').innerHTML =
-        `<div class="status success"><i class="ti ti-check" aria-hidden="true"></i> "${currentNewWord.word}" saved to GitHub!</div>
-         <div class="status error" style="margin-top:6px"><i class="ti ti-alert-circle" aria-hidden="true"></i> Notion sync failed: ${notionErr.message}</div>`;
-      btn.innerHTML = '<i class="ti ti-bookmark-filled" aria-hidden="true"></i> Saved!';
-      document.getElementById('review-count').textContent = vocabList.length;
-      return;
-    }
-
-    document.getElementById('review-count').textContent = vocabList.length;
-    const notionNote = NOTION_TOKEN ? ' and Notion' : '';
-    document.getElementById('save-status').innerHTML =
-      `<div class="status success"><i class="ti ti-check" aria-hidden="true"></i> "${currentNewWord.word}" saved to GitHub${notionNote}!</div>`;
-    btn.innerHTML = '<i class="ti ti-bookmark-filled" aria-hidden="true"></i> Saved!';
-
-  } catch (e) {
-    vocabList.pop();
-    document.getElementById('save-status').innerHTML =
-      `<div class="status error"><i class="ti ti-alert-circle" aria-hidden="true"></i> Could not save: ${e.message}</div>`;
-    btn.disabled = false;
-    btn.innerHTML = '<i class="ti ti-bookmark" aria-hidden="true"></i> Add to my list';
-  }
-}
-
-function nextNewWord() { loadNewWord(); }
-
-// ── Card flip ──────────────────────────────────────────────────────────
 function flipCard(deck) {
   if (deck === 'review') {
     if (!reviewWords.length || reviewIdx >= reviewWords.length) return;
     reviewFlipped = !reviewFlipped;
     document.getElementById('review-card').classList.toggle('flipped', reviewFlipped);
-    if (reviewFlipped) {
-      document.getElementById('review-hint').style.display = 'none';
-      document.getElementById('review-btns').style.display = 'flex';
-    }
+    if (reviewFlipped) { document.getElementById('review-hint').style.display = 'none'; document.getElementById('review-btns').style.display = 'flex'; }
   } else {
-    if (!currentNewWord) return;
+    if (!currentNewWord || newIdx >= newQueue.length) return;
     newFlipped = !newFlipped;
     document.getElementById('new-card').classList.toggle('flipped', newFlipped);
-    if (newFlipped) {
-      document.getElementById('new-hint').style.display = 'none';
-      document.getElementById('new-btns').style.display = 'flex';
-    }
+    if (newFlipped) { document.getElementById('new-hint').style.display = 'none'; document.getElementById('new-btns').style.display = 'flex'; }
   }
 }
 
-// ── Tab switching ──────────────────────────────────────────────────────
 function switchTab(tab) {
   document.getElementById('panel-review').style.display = tab === 'review' ? 'block' : 'none';
   document.getElementById('panel-new').style.display   = tab === 'new'    ? 'block' : 'none';
