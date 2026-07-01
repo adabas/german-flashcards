@@ -1,0 +1,76 @@
+[
+  {
+    "word": "die Erfahrung",
+    "artikel": "die",
+    "wortart": "Nomen",
+    "meaning": "Knowledge or skill gained through repeated practice or exposure over time.",
+    "beispiel": "Sie hat viel Erfahrung als Lehrerin.",
+    "uebersetzung": "experience (knowledge/skill built over time)",
+    "niveau": "B1"
+  },
+  {
+    "word": "das Erlebnis",
+    "artikel": "das",
+    "wortart": "Nomen",
+    "meaning": "A personal, memorable experience that you lived through and felt emotionally.",
+    "beispiel": "Der Konzertbesuch war ein tolles Erlebnis.",
+    "uebersetzung": "experience (personal, emotional)",
+    "niveau": "B1"
+  },
+  {
+    "word": "das Ereignis",
+    "artikel": "das",
+    "wortart": "Nomen",
+    "meaning": "An objective event or occurrence, often significant, that doesn't need to involve you personally.",
+    "beispiel": "Die Mondlandung war ein historisches Ereignis.",
+    "uebersetzung": "event, occurrence",
+    "niveau": "B1"
+  },
+  {
+    "word": "entschlossen",
+    "artikel": null,
+    "wortart": "Adjektiv",
+    "meaning": "Fest in einer Entscheidung; bereit, ohne Zögern zu handeln",
+    "beispiel": "Er ist sehr entschlossen, seinen Traum zu verwirklichen.",
+    "uebersetzung": "determined, resolute, decisive",
+    "niveau": "B1",
+    "notizen": "Partizip II von 'sich entschließen', aber auch selbstständiges Adjektiv"
+  },
+  {
+    "word": "der Einfall",
+    "artikel": "der",
+    "wortart": "Nomen",
+    "meaning": "Eine plötzliche Idee; auch: ein militärischer Angriff/Invasion",
+    "beispiel": "Ich hatte einen guten Einfall.",
+    "uebersetzung": "sudden idea, brainwave; (military) invasion",
+    "niveau": "B1"
+  },
+  {
+    "word": "das Heimweh",
+    "artikel": "das",
+    "wortart": "Nomen",
+    "meaning": "Das Gefühl, die Heimat oder Familie zu vermissen",
+    "beispiel": "Als ich in Berlin war, hatte ich manchmal Heimweh.",
+    "uebersetzung": "homesickness",
+    "niveau": "B1",
+    "notizen": "Immer mit 'haben': Heimweh haben. Gegenteil: das Fernweh (wanderlust)"
+  },
+  {
+    "word": "besenrein",
+    "artikel": null,
+    "wortart": "Adjektiv",
+    "meaning": "Broom-clean — a property swept and emptied, ready to hand over. Used in rental/moving contexts.",
+    "beispiel": "Die Wohnung muss besenrein übergeben werden.",
+    "uebersetzung": "broom-clean (swept and emptied)",
+    "niveau": "B1"
+  },
+  {
+    "word": "faul",
+    "artikel": null,
+    "wortart": "Adjektiv",
+    "meaning": "1. lazy 2. rotten (food)",
+    "beispiel": "Er ist sehr faul — er lernt nie!",
+    "uebersetzung": "lazy / rotten",
+    "niveau": "B1"
+  }
+]
