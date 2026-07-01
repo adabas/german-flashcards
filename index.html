@@ -151,13 +151,13 @@
         <div class="card-wrap" onclick="flipCard()">
           <div class="card-inner" id="review-card-inner">
             <div class="card-face">
-              <div class="card-label">German</div>
-              <div class="card-word" id="rv-word"></div>
+              <div class="card-label">English</div>
+              <div class="card-word" id="rv-meaning" style="font-size:20px"></div>
               <div class="card-meta" id="rv-meta"></div>
             </div>
             <div class="card-face card-back">
-              <div class="card-label">Meaning</div>
-              <div class="card-word" id="rv-meaning" style="font-size:20px"></div>
+              <div class="card-label">German</div>
+              <div class="card-word" id="rv-word"></div>
               <div class="card-meta" id="rv-translation"></div>
               <div class="card-example" id="rv-example"></div>
             </div>
@@ -287,9 +287,9 @@ function showReviewCard() {
   }
   const w = reviewWords[reviewIdx];
   document.getElementById('rv-word').textContent = w.word;
-  document.getElementById('rv-meta').textContent = [w.wortart, w.niveau].filter(Boolean).join(' · ');
-  document.getElementById('rv-meaning').textContent = w.meaning || w.uebersetzung || '';
-  document.getElementById('rv-translation').textContent = w.uebersetzung || '';
+  document.getElementById('rv-meta').textContent = w.wortart || '';
+  document.getElementById('rv-meaning').textContent = w.uebersetzung || w.meaning || '';
+  document.getElementById('rv-translation').textContent = [w.wortart, w.niveau].filter(Boolean).join(' · ');
   document.getElementById('rv-example').textContent = w.beispiel || '';
   document.getElementById('review-card-inner').classList.remove('flipped');
   document.getElementById('sc-left').textContent = reviewWords.length - reviewIdx;
