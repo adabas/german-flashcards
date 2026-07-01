@@ -90,5 +90,14 @@
     "beispiel": "Du musst dich entscheiden.",
     "uebersetzung": "to decide",
     "niveau": "B1"
+  },
+  {
+    "word": "die Frist",
+    "artikel": "die",
+    "wortart": "Nomen",
+    "meaning": "deadline / period",
+    "beispiel": "Die Frist endet am Freitag.",
+    "uebersetzung": "The deadline is on Friday.",
+    "niveau": "B1"
   }
 ]
