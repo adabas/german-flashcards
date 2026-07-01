@@ -30,17 +30,17 @@
     "word": "entschlossen",
     "artikel": null,
     "wortart": "Adjektiv",
-    "meaning": "Fest in einer Entscheidung; bereit, ohne Zögern zu handeln",
+    "meaning": "Fest in einer Entscheidung; bereit, ohne ZÃ¶gern zu handeln",
     "beispiel": "Er ist sehr entschlossen, seinen Traum zu verwirklichen.",
     "uebersetzung": "determined, resolute, decisive",
     "niveau": "B1",
-    "notizen": "Partizip II von 'sich entschließen', aber auch selbstständiges Adjektiv"
+    "notizen": "Partizip II von 'sich entschlieÃen', aber auch selbststÃ¤ndiges Adjektiv"
   },
   {
     "word": "der Einfall",
     "artikel": "der",
     "wortart": "Nomen",
-    "meaning": "Eine plötzliche Idee; auch: ein militärischer Angriff/Invasion",
+    "meaning": "Eine plÃ¶tzliche Idee; auch: ein militÃ¤rischer Angriff/Invasion",
     "beispiel": "Ich hatte einen guten Einfall.",
     "uebersetzung": "sudden idea, brainwave; (military) invasion",
     "niveau": "B1"
@@ -49,7 +49,7 @@
     "word": "das Heimweh",
     "artikel": "das",
     "wortart": "Nomen",
-    "meaning": "Das Gefühl, die Heimat oder Familie zu vermissen",
+    "meaning": "Das GefÃ¼hl, die Heimat oder Familie zu vermissen",
     "beispiel": "Als ich in Berlin war, hatte ich manchmal Heimweh.",
     "uebersetzung": "homesickness",
     "niveau": "B1",
@@ -59,8 +59,8 @@
     "word": "besenrein",
     "artikel": null,
     "wortart": "Adjektiv",
-    "meaning": "Broom-clean — a property swept and emptied, ready to hand over. Used in rental/moving contexts.",
-    "beispiel": "Die Wohnung muss besenrein übergeben werden.",
+    "meaning": "Broom-clean â a property swept and emptied, ready to hand over. Used in rental/moving contexts.",
+    "beispiel": "Die Wohnung muss besenrein Ã¼bergeben werden.",
     "uebersetzung": "broom-clean (swept and emptied)",
     "niveau": "B1"
   },
@@ -69,8 +69,17 @@
     "artikel": null,
     "wortart": "Adjektiv",
     "meaning": "1. lazy 2. rotten (food)",
-    "beispiel": "Er ist sehr faul — er lernt nie!",
+    "beispiel": "Er ist sehr faul â er lernt nie!",
     "uebersetzung": "lazy / rotten",
+    "niveau": "B1"
+  },
+  {
+    "word": "scheitern",
+    "artikel": null,
+    "wortart": "Verb",
+    "meaning": "to fail",
+    "beispiel": "Das Projekt ist gescheitert.",
+    "uebersetzung": "The project has failed.",
     "niveau": "B1"
   }
 ]
