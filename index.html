@@ -387,7 +387,7 @@ async function saveNewWord() {
       throw new Error(`GitHub ${fileResp.status}`);
     }
     const fileData = await fileResp.json();
-    const currentContent = JSON.parse(atob(fileData.content.replace(/\n/g, '')));
+    const decoded = atob(fileData.content.replace(/\n/g, '')); const utf8 = decodeURIComponent(escape(decoded)); const currentContent = JSON.parse(utf8);
     currentContent.push(entry);
     // PUT updated file
     const putResp = await fetch(
